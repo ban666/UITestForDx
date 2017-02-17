@@ -1,0 +1,20 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+ProductTimeTest
+    [Template]    ProductTimeCheck
+    1
+    5
+    9
+    13
+    17
+
+PriceTest
+    [Template]    PriceCheck
+    1    1
+    5    21
+    9    33
+    13    44
+    17    99999999

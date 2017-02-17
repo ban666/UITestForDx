@@ -1,0 +1,26 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+@{RequestParams}    hd_ec    hd_dc    hd_ak    hd_v    hd_chnl    hd_cc    hd_loc
+...               hd_p    hd_pid    hd_tid
+@{SubscirbedChannel}
+${cc}             420106
+${chnl_count}     3
+${ec_company}     420281000010000
+
+*** Test Cases ***
+CompanyChnl
+    [Documentation]    1、查找数据库抽取前3条可订阅频道
+    ...    2、通过subchnl接口发送订阅请求
+    ...    3、通过chnl接口获取已订阅频道
+    ...    4、验证强制频道+已发送订阅频道=步骤3获取的可订阅频道
+    [Template]    ChannelSubscriptionTester
+    news/subchnl    ${ec_company}    ${dc}    ${ak}    ${v}    ${hd_chnl}    ${cc}
+    ...    ${loc}    ${p}    ${pid}    ${tid}
+
+ChannelRequest
+    [Template]    ChannelRequestTester
+    news/chnl    ${ec_company}    ${dc}    ${ak}    ${v}    ${hd_chnl}    ${cc}
+    ...    ${loc}    ${p}    ${pid}    ${tid}

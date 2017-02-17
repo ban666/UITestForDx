@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+IntersectionTest
+    ${intersection}    get_intersection_of_head_for_dx_yc
+    ${len}    get length    ${intersection}
+    Should Be Equal As Integers    ${len}    0
+
+MyClueIntersectionTest
+    ${intersection}    get_intersection_of_my_clue_for_dx_yc
+    ${len}    get length    ${intersection}
+    Should Be Equal As Integers    ${len}    0

@@ -1,0 +1,18 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+OldVersionTest
+    ${info_list}    get_all_infoid    2
+    ${article_content}    get_article_for_paper_old_version    ${info_list[0]}
+    log    ${article_content}
+    Dictionary Should Contain Key    ${article_content}    id
+    Dictionary Should Contain Key    ${article_content}    url
+
+V21Test
+    ${info_list}    get_all_infoid    2
+    ${article_content}    get_article_for_paper     ${info_list[0]}    hd_v=3.5.0    hd_dc=1,0,0,ZRI86EokopFwTupgTtln.qpv7E30B_EgIJAQcGx2x2A=#d7d5068c729407fd97d5cf2342917f45
+    log    ${article_content}
+    Dictionary Should Contain Key    ${article_content['data']}    infoid
+    Dictionary Should Not Contain Key    ${article_content['data']}    pay

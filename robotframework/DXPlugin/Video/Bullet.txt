@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+SendBullet
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、弹幕可以成功发送
+    [Template]    GetFirstVideoAddBullet
+    123

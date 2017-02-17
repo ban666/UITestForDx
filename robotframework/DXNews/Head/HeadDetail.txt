@@ -1,0 +1,11 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+CommentTest
+    ${head_list}    get_head_list    2
+    ${head_detail}    get_head_detail    ${head_list[0]['id']}
+    ${ret}    get_head_datail_by_db    ${head_list[0]['id']}
+    Should Be Equal As Integers    ${head_detail['clue']['reply']}    ${ret['replyCount']}
+    Should Be Equal As Integers    ${head_detail['clue']['digg']}    ${${ret['supportBase']}+${ret['supportCount']}}

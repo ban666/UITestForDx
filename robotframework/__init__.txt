@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          public/public.txt
+Library           HttpLibrary.HTTP
+Library           Collections
+Library           DateTime
+Library           public/ApiTestLib.py
+Library           RequestsLibrary
+Library           DatabaseLibrary
+Library           Selenium2Library
+Library           public/RequestLib.py

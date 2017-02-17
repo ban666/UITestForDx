@@ -1,0 +1,25 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Variables ***
+${pic_list}       ['f:/pic/pause20161128170824.png', 'f:/pic/start20161128111853.png']
+
+*** Test Cases ***
+IpTest
+    ${ret}    get_clue_type
+    #发布匿名报料
+    send_clue    123    ${ret[0]['subtype']}    1
+    ${clue_info}    get_latest_clue    ${ret[0]['subtype']}
+    Should Not Be Empty    ${clue_info['ip']}
+    #发布非匿名报料
+    send_clue    123    ${ret[0]['subtype']}
+    ${clue_info}    get_latest_clue    ${ret[0]['subtype']}
+    Should Not Be Empty    ${clue_info['ip']}
+
+AnonyTest
+    ${ret}    get_clue_type
+    #发布匿名报料
+    send_clue    123    ${ret[0]['subtype']}    1
+    ${clue_info}    get_latest_clue    ${ret[0]['subtype']}
+    Should Be Equal As Integers    ${clue_info['anony']}    1

@@ -1,0 +1,14 @@
+*** Variables ***
+${ec}             420000000010000    # 当前域
+${dc}             1,0,0,jv5RDypcLOG1Ho6UTgf8NN5sUcLGl4Zvk2eH3fH3wEI=#5e9aa5554c03189c306b2ef944aa2334
+${ak}             1
+${v}              3.0.6
+${tid}            a_imei865479020303095
+${hd_chnl}        cnhubei
+${p}              i
+${pid}            090374b33f6
+${loc}            wuhan
+${mode}           /mcp/dx/1/
+${default_ec}     420000000010000
+${cc}             420106
+${chnl}           cnhubei

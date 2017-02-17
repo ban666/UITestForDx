@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+${ec1}            420281000010000
+${cc1}            420922
+${cc2}            429004
+${ec2}            420000000030000
+
+*** Test Cases ***
+AddChnlTest
+    [Template]    AddChnlCheck
+    ${dc}    ${ec1}    ${cc1}
+    ${dc}    ${ec2}    ${cc2}

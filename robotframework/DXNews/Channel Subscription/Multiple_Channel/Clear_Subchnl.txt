@@ -1,0 +1,24 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+@{RequestParams}    hd_ec    hd_dc    hd_ak    hd_v    hd_chnl    hd_cc    hd_loc
+...               hd_p    hd_pid    hd_tid
+@{SubscirbedChannel}
+${cc}             420106
+${chnl_count}     0
+
+*** Test Cases ***
+ChannelSubscription
+    [Documentation]    1、删除所有已订阅频道（即通过subchnl接口发送订阅请求时，chnl参数为空）
+    ...    2、通过chnl接口获取已订阅频道
+    ...    3、验证步骤3中获取的已订阅频道仅剩强制频道
+    [Template]    ChannelSubscriptionTester
+    news/subchnl    ${ec}    ${dc}    ${ak}    ${v}    ${hd_chnl}    ${cc}
+    ...    ${loc}    ${p}    ${pid}    ${tid}
+
+ChannelRequest
+    [Template]    ChannelRequestTester
+    news/chnl    ${ec}    ${dc}    ${ak}    ${v}    ${hd_chnl}    ${cc}
+    ...    ${loc}    ${p}    ${pid}    ${tid}

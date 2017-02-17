@@ -1,0 +1,13 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Test Cases ***
+TurnoffCommentTest
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、不同model的文章在关闭评论后，发送评论请求均返回错误“评论已关闭”
+    [Template]    TurnoffCommentTest
+    2
+    3
+    13
+    25

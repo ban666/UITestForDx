@@ -1,0 +1,42 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+Library           ../../public/HeadRequest.py    mcp/dx
+
+*** Test Cases ***
+HeadPassCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    ${send_ret}    send_head    abc    2    ac    hd_dc=${userinfo['dc']}
+    ${review_ret}    review_head    ${userinfo['dc']}    1    abc
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    120
+    :FOR    ${index}    IN RANGE    5
+    \    send_head    abc    2    ac    hd_dc=${userinfo['dc']}
+    \    review_head    ${userinfo['dc']}    1    abc
+    \    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    \    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    220
+    [Teardown]    regist_and_login    13477777777    True
+
+HeadFailedCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    ${send_ret}    send_head    abc    2    ac    hd_dc=${userinfo['dc']}
+    ${review_ret}    review_head    ${userinfo['dc']}    0    abc
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    [Teardown]    regist_and_login    13477777777    True
+
+ExtraPointsCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    ${send_ret}    send_head    abc    2    ac    hd_dc=${userinfo['dc']}
+    ${review_ret}    review_head    ${userinfo['dc']}    1    abc    1
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    220
+    [Teardown]    regist_and_login    13477777777    True

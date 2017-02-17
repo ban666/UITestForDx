@@ -1,0 +1,21 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+ModelSearchTest
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、不同model的文章可以被搜索并查看
+    [Template]    ModelSearchTest
+    2
+    3
+    4
+    13
+    17
+    25
+
+SymbolSearchTest
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、特殊符号可以被搜索并查看正确结果
+    [Template]    SymbolSearchTest
+    !@#$%

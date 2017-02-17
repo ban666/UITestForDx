@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+SuggestTest
+    [Documentation]    本条用例验证意见反馈接口：1、发送意见反馈请求；2、在数据库中可查找到该条记录
+    [Template]    SuggestTest
+    湖北日报自动化输入意见反馈

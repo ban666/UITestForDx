@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+Library           ../../../../DXYC/public/DbLib.py
+
+*** Test Cases ***
+SubTypeTest
+    ${ret}    get_clue_type
+    ${subtype}    get_yc_clue_type_by_db
+    : FOR    ${index}    IN RANGE    4
+    \    log    ${ret[${index}]['name']}
+    \    Should Be Equal As Strings    ${ret[${index}]['name']}    ${subtype[${index}]}

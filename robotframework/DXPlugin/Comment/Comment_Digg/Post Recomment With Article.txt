@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Plugin_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+Recomment
+    [Documentation]    本用例目的为针对已有评论发表评论
+    ...    1、发送chnl请求获取第一个强制频道
+    ...    2、发送list请求获取所有为指定model以及可评论的新闻
+    ...    3、选取第一篇可评论的新闻发表评论，获取评论ID
+    ...    4、针对步骤3中获取的评论发表评论
+    ...    5、对比步骤3中返回的quote字段与步骤3的评论id及content
+    [Template]    PostCommentWithComment
+    评论1    评论2

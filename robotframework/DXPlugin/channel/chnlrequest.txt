@@ -1,0 +1,17 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Variables ***
+${ak1}            1
+${cc1}            420106
+${cc2}            420922
+
+*** Test Cases ***
+ChnlList
+    [Documentation]    本条用例主要验证以下功能
+    ...    1、不同宿主能够返回不同频道
+    ...    2、服务器返回频道为宿主域配置的强制推荐及推荐频道
+    [Template]    ChnlRequest
+    ${ak1}    ${cc1}
+    ${ak1}    ${cc2}

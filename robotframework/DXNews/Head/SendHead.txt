@@ -1,0 +1,21 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Variables ***
+${pic_list}       ['f:/pic/pause20161128170824.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png', 'f:/pic/start20161128111853.png']
+
+*** Test Cases ***
+SendHeadWithPic
+    [Template]    SendHeadFunc
+    baoliaotest    2    ${pic_list}    ''
+    baoliaotest    3    ${pic_list}    ''
+
+SendHeadWithoutPic
+    [Template]    SendHeadFunc
+    baoliaotest    2    ''    ''
+    baoliaotest    3    ''    ''
+
+LocationTest
+    [Template]    HeadLocationTest
+    baoliaotest    3    ''    123    ${dc}

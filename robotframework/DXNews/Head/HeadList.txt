@@ -1,0 +1,24 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+ExtraPoint
+    [Template]    ExtraPointTest
+    baoliaotest    2    ''    武汉市洪山区和平乡63号    ${dc}
+    baoliaotest2    3    ''    123    ${dc}
+
+UnpublishedTest
+    [Template]    UnpublishedHeadTest
+    baoliaotest    2    ''    武汉市洪山区和平乡63号    ${dc}
+    baoliaotest2    3    ''    123    ${dc}
+
+HeadSortTest
+    [Template]    HeadSortCheck
+    2
+    3
+
+HeadDigg
+    [Template]    HeadDiggTest
+    2
+    3

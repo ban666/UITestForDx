@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+HeadCommentAndCheck
+    [Template]    PostCommentWithHeadAndCheckMycomm
+    1    热门评论1
+    2    爆料评论1
+    3    我秀评论1

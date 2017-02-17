@@ -1,0 +1,18 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+PageviewTestForSpAndList
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、专题及专栏阅读数不显示，即服务器返回阅读数始终为0
+    [Template]    PageViewCheck
+    4
+    5
+
+PageviewTestForArticle
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、文字新闻及组图新闻阅读数在点击后正确增加
+    [Template]    PageviewCheckForArticle
+    2
+    3

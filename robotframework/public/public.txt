@@ -1,0 +1,49 @@
+*** Settings ***
+Library           HttpLibrary.HTTP
+Library           Collections
+Library           ApiTestLib.py
+Library           RequestsLibrary
+Library           DatabaseLibrary
+Library           Selenium2Library
+Library           RequestLib.py
+
+*** Variables ***
+${allhost}        test.cnhubei.com
+${SignName}       hd_sign
+${TsName}         hd_ts
+${db_host}        '10.99.113.80'
+${db_port}        3306
+${db_name}        'mcp'
+${db_username}    'root'
+${db_password}    'AiWz2uMRwiCpkRqeHtrxv'
+
+*** Keywords ***
+Send Request
+    [Arguments]    ${TestData}
+    @{ParamString}    Create List
+    @{RequestBody}    Create List
+    ${RequestParamsNum}=    get length    ${RequestParams}
+    ${path}=    Get Slice From List    ${testData}    0    1
+    ${params}=    Get Slice From List    ${testData}    1
+    ${ParamsDic}=    Create Dictionary    ${null}    ${null}
+    ${timestamp}=    GetTimeStamp
+    : FOR    ${index}    IN RANGE    ${RequestParamsNum}
+    \    ${key}=    get from list    ${RequestParams}    ${index}
+    \    ${value}=    get from list    ${params}    ${index}
+    \    ${ParamsDic}=    Collections.Set To Dictionary    ${ParamsDic}    ${key}    ${value}
+    \    Append to List    ${Requestbody}    ${key}=${value}
+    \    Append to List    ${Paramstring}    ${key}${value}
+    Append to List    ${Requestbody}    ${TsName}=${timestamp}
+    Append to List    ${Paramstring}    ${TsName}${timestamp}
+    ${sign}    Sign    ${Paramstring}
+    Append to List    ${Requestbody}    ${SignName}=${sign}
+    ${Requestbody}=    ListToRequestbody    ${Requestbody}
+    create http context    ${allhost}    http
+    Set Request Body    ${Requestbody}
+    ${path}=    get from list    ${path}    0
+    log    ${Requestbody}
+    log    ${mode}${path}
+    HttpLibrary.HTTP.POST    ${mode}${path}
+    ${body}=    Get Response Body
+    ${Json_body}=    To json    ${body}
+    [Return]    ${Json_body}    ${ParamsDic}

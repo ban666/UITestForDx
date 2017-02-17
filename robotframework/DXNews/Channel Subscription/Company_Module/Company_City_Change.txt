@@ -1,0 +1,22 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+${cc1}            420922
+${cc2}            429006
+${ec_company}     420281000010000
+
+*** Test Cases ***
+ChangeCityCheck
+    [Documentation]    预置条件：
+    ...    ec为企业域
+    ...    测试步骤：
+    ...    1、发送chnl接口修改地方城市，并获取第一个非企业强制域
+    ...    2、发送list接口获取步骤1获取的强制域的第六篇文章
+    ...    3、查找数据库，获取地方强制频道的第一篇文章
+    ...    4、对比步骤2与步骤3中获取的文章是否一致
+    ...    注：需保证地方强制频道下至少有一片文章
+    [Template]    CityChangeTester
+    ${ec_company}    ${cc1}
+    ${ec_company}    ${cc2}

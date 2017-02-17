@@ -1,0 +1,35 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+ModelSearchTest
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、不同model的文章可以被搜索并查看
+    [Template]    ModelSearchTest
+    2
+    3
+    4
+    13
+    17
+    25
+
+SymbolSearchTest
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、特殊符号可以被搜索并查看正确结果
+    [Template]    SymbolSearchTest
+    !@#$%
+
+EmptySearchTest
+    ${search_ret}    search    ${EMPTY}
+    log    ${search_ret}
+    Should Be Equal As Integers    ${search_ret['code']}    10000
+
+DelAndSearchTest
+    [Template]    DelArticleAndSearchTest
+    2
+    3
+    4
+    13
+    17
+    25

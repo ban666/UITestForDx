@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+RemarkTest
+    ${act_list}    get_activity_list
+    ${apply_result}    apply_activity    ${act_list[0]['id']}    123    13411111111    一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一一
+    Should Be Equal As Strings    ${apply_result}    False

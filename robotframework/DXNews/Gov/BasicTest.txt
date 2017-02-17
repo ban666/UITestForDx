@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+BasicTest
+    [Template]    GovBasicTest
+    42
+    420606

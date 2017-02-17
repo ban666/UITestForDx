@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+MyPaperTest
+    set_user_paid_for_newspapar    ${dc}    2
+    ${my_paper}    get_my_paper
+    ${id_list}    get_all_id    ${my_paper}    telmid
+    log    ${id_list}
+    ${db_list}    get_user_paper_info    ${dc}
+    ${db_list}    get_all_id    ${db_list}    telmid
+    log    ${db_list}
+    Should Be Equal    ${db_list}    ${id_list}

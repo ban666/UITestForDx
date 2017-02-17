@@ -1,0 +1,265 @@
+*** Settings ***
+Resource          DX_Plugin_Info.txt
+Resource          ../public/public.txt
+Library           RequestsLibrary
+Library           HttpLibrary.HTTP
+Library           Collections
+Library           RequestsLibrary
+Library           ../public/ApiTestLib.py
+Library           ../public/RequestLib.py
+Library           pymysql
+Library           ../public/SubchnlApiLib.py
+Library           ../public/RequestForDx.py
+Library           ../public/ChnlRequest.py    ${mode}    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/common.py
+Library           ../public/DbLib.py
+Library           ../public/StructCheck.py
+Library           ../public/BaoliaoRequest.py    ${ec}    ${cc}    ${p}    ${v}    ${yc_ak}    ${yc_dc}
+...               ${tid}    ${pid}    ${loc}    ${chnl}    ${yc_secret}
+
+*** Keywords ***
+ChnlRequest
+    [Arguments]    ${ak}    ${cc}
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${chnl_list}=    Query    select rechid,name,flag,model from domain_released_channel where z in ((SELECT domainCode as ec from domain,apps where apps.appid=${ak} and apps.appid=domain.domid),${cc}) and state=30 and not drccid=0 and sortNum in ('10','20','30','40','50','60') order by sortNum,sort3 desc;
+    Disconnect From Database
+    ${ret_json}=    ChnlRequest.chnl    hd_ak=${ak}    hd_cc=${cc}
+    ${result}=    result_check_for_chnl_request_plugin    ${chnl_list}    ${ret_json['list']}
+    Should Be True    ${result}
+
+PageviewCheck
+    [Arguments]    ${model}
+    ${chnl_list}=    ChnlRequest.chnl
+    ${article_list_old}=    get_article_by_model    ${model}    ${chnl_list['list'][0]['id']}
+    Should Be Equal As Integers    ${article_list_old[0]['pageview']}    0
+    get_article    ${article_list_old[0]}
+    ${article_list_new}=    get_article_by_model    ${model}    ${chnl_list['list'][0]['id']}
+    Should Be Equal As Integers    ${article_list_new[0]['pageview']}    0
+
+PageviewCheckForArticle
+    [Arguments]    ${model}
+    ${chnl_list}=    ChnlRequest.chnl
+    ${article_list_old}=    get_article_by_model    ${model}    ${chnl_list['list'][0]['id']}
+    get_article    ${article_list_old[0]}
+    ${article_list_new}=    get_article_by_model    ${model}    ${chnl_list['list'][0]['id']}
+    Should Be Equal As Integers    ${article_list_new[0]['pageview']}    ${article_list_old[0]['pageview']+1}
+
+GetFirstCommentAndDigg
+    [Arguments]    @{args}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article_id}    ${comment_id}    get_first_comment_for_digg    ${rechid['id']}
+    ${digg_count_old}    get_digg_count    ${article_id}    ${comment_id}
+    digg    ${comment_id}
+    ${digg_count_new}    get_digg_count    ${article_id}    ${comment_id}
+    log    ${digg_count_old}
+    log    ${digg_count_new}
+    Should Be Equal    ${digg_count_old+1}    ${digg_count_new}
+
+PostCommentWithComment
+    [Arguments]    ${comment1}    ${comment2}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_id_1}    send_comment    ${article}    ${comment1}
+    ${comment_id_2}    send_comment    ${article}    ${comment2}    ${comment_id_1}
+    ${comment_list}    get_comment    ${article}
+    ${first_comment}    get from list    ${comment_list}    0
+    log    ${first_comment['quote']}
+    ${quote_id}    ${quote_content}    get_quote    ${first_comment['quote']}
+    ${compare_result}    str_compare    ${quote_content}    ${comment1}
+    Should Be Equal    ${first_comment['comid']}    ${comment_id_2}
+    Should Be Equal    ${quote_id}    ${comment_id_1}
+    Should Be True    ${compare_result}
+
+GetFirstArticleAndPostCorrectComment
+    [Arguments]    ${article_type}    ${comment}
+    ${chnl_list}=    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article_list}    get_type_article_list_for_comment    ${article_type}    ${rechid['id']}
+    ${article}    get from list    ${article_list}    0
+    ${comment_id}    send_comment    ${article}    ${comment}
+    ${comment_list}    get_comment    ${article}
+    ${first_comment}    get from list    ${comment_list}    0
+    Should Be Equal    ${first_comment['comid']}    ${comment_id}
+    Should Be Equal    ${first_comment['content']}    ${comment}
+
+GetFirstArticleAndPostErrorComment
+    [Arguments]    ${comment}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_err_msg}    send_comment    ${article}    ${comment}
+    Should Be Equal    ${comment_err_msg['code']}    10000
+
+GetFirstVideoAddBullet
+    [Arguments]    ${content}
+    ${chnlid}=    chnl
+    ${uricode}    ${vtime}    get_first_video_and_add_bullet    ${content}    ${chnlid['list'][0]['id']}
+    ${result}=    check_bullet_from_db_and_delete    ${uricode}    ${vtime}    ${content}
+    Should Be True    ${result}
+
+PagingTest
+    [Arguments]    ${paging_num}
+    ${num_list}    get_article_num    ${ak}    ${cc}    plug
+    ${rechid}    ${num}    get_rechid_by_limit    ${paging_num}    ${num_list}
+    ${article_list_page1}    get_list    ${rechid}
+    ${page1_id}    get from list    ${article_list_page1}    -1
+    ${article_list_page2}    get_list    ${rechid}    ${page1_id['infoid']}    nearer
+    Should Not Be Equal    ${page1_id['infoid']}    ${article_list_page2[1]['infoid']}
+
+FocusLimitTest
+    [Arguments]    ${focus_num}
+    ${num_list}    get_focus_num    ${ak}    ${cc}    plug
+    log    ${num_list}
+    ${rechid}    ${num}    get_rechid_by_limit    ${focus_num}    ${num_list}
+    ${focus_list}    get_focus    ${rechid}
+    ${focus_length}    get length    ${focus_list}
+    Should Be Equal As Integers    ${focus_length}    ${focus_num}
+
+SpPageTest
+    ${chnlid}=    chnl
+    ${sp_list}    get_article_by_model    5    ${chnlid['list'][0]['id']}
+    ${sp_page1}=    get_article    ${sp_list[0]}
+    ${sp_page2}=    get_article    ${sp_list[0]}    id=${sp_page1[-1]['infoid']}    cmd=farther
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${article_list}=    Query    select infoid from information,released_channel as rc where information.cateid=rc.cateid2 and rc.cateid2=(select cateid2 from released_channel where rechid=(select rechid from information where infoid=${sp_list[0]['infoid']})) and information.state=30 order by information.sort3 desc;
+    ${article_list}=    db_ret_to_list    ${article_list}
+    Should Be Equal As Strings    ${article_list[20]}    ${sp_page2[0]['infoid']}
+
+ArticleDiggTest
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    2    ${chnlid['list'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_old}    ${unlike_digg_old}    get_digg_for_article    ${article_content}
+    log    ${like_digg_old}
+    log    ${unlike_digg_old}
+    #digg like
+    digg_for_article    ${article_content['infoid']}    1
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_new}    ${unlike_digg_new}    get_digg_for_article    ${article_content}
+    Should Be Equal    ${like_digg_old+1}    ${like_digg_new}
+    #digg unlike
+    digg_for_article    ${article_content['infoid']}    0
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_new}    ${unlike_digg_new}    get_digg_for_article    ${article_content}
+    Should Be Equal    ${unlike_digg_old+1}    ${unlike_digg_new}
+
+ReplyCountTest
+    [Arguments]    ${model}    ${comment}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['list'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${reply_count_old}=    Get From Dictionary    ${article_content}    repcount
+    ${article_id}    get_id    ${article_content}
+    ${comment_id_1}    send_comment    ${article_id}    ${comment}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${reply_count_new}=    Get From Dictionary    ${article_content}    repcount
+    log    ${reply_count_old}
+    log    ${reply_count_new}
+    Should Be Equal As Integers    ${reply_count_old+1}    ${reply_count_new}
+
+TurnoffCommentTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['list'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${article_id}    get_id    ${article_content}
+    change_comment_state_by_db    ${article_id}    1
+    ${err_content}    send_comment    ${article_id}    123
+    change_comment_state_by_db    ${article_id}    0
+    log    ${err_content}
+    Should Be Equal    ${err_content['code']}    10002
+    Should Be Equal    ${err_content['msg']}    评论已关闭
+
+GetArticleTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['list'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    log    ${article_content}=
+    ${result}    struct_check    ${article_content}    ${model}
+    Should Be True    ${result}
+
+HotwordsTest
+    ${ret}    get_hotword_by_db_and_check_ret
+    Should Be True    ${ret}
+
+ModelSearchTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['list'][0]['id']}
+    ${search_ret}    search    ${article_list[0]['title']}
+    log    ${article_list[0]['title']}
+    log    ${search_ret[0]['title']}
+    Should Be Equal As Strings    ${search_ret[0]['infoid']}    ${article_list[0]['infoid']}
+    Should Be Equal As Strings    ${search_ret[0]['model']}    ${article_list[0]['model']}
+
+SymbolSearchTest
+    [Arguments]    ${keywords}
+    ${search_ret}    search    ${keywords}
+    log    ${search_ret}
+    ${ret_length}    get length    ${search_ret}
+    Should Be True    ${ret_length}>0
+
+DelArticleAndSearchTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['list'][0]['id']}
+    ${search_ret}    search    ${article_list[0]['title']}
+    log    ${article_list[0]['title']}
+    log    ${search_ret[0]['title']}
+    Should Be Equal As Strings    ${search_ret[0]['infoid']}    ${article_list[0]['infoid']}
+    Should Be Equal As Strings    ${search_ret[0]['model']}    ${article_list[0]['model']}
+    del_article_by_db    ${article_list[0]['infoid']}
+    ${search_ret_new}    search    ${article_list[0]['title']}
+    ${ret_length}    get length    ${search_ret_new}
+    publish_del_article_by_db    ${article_list[0]['infoid']}
+    Should Be Equal As Integers    ${ret_length}    0
+
+CheckClueState
+    [Arguments]    ${subtype}
+    ${clues1}    get_clue_list    ${subtype}
+    set_article_unpublished_by_db    ${clues1[0]['cid']}
+    ${clues2}    get_clue_list    ${subtype}
+    Should Not Contain    ${clues2}    ${clues1[0]}
+    publish_del_article_by_db    ${clues1[0]['cid']}
+    ${clues3}    get_clue_list    ${subtype}
+    Should Contain    ${clues3}    ${clues1[0]}
+    set_article_faield_by_db    ${clues1[0]['cid']}
+    ${clues4}    get_clue_list    ${subtype}
+    Should Not Contain    ${clues4}    ${clues1[0]}
+    publish_del_article_by_db    ${clues1[0]['cid']}
+
+MyClueCheck
+    [Arguments]    ${head_type}
+    ${ret}    send_clue    123    ${head_type}
+    Should Be True    ${ret}
+    sleep    3
+    ${clue_info}    get_latest_clue    ${head_type}
+    #未审核
+    ${head_list}    get_my_clue_list_for_yc
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_my_clue_list_for_yc
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #不通过
+    change_article_state_by_db    ${clue_info['infoid']}    3
+    ${head_list}    get_my_clue_list_for_yc
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_my_clue_list_for_yc
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #删除
+    change_article_state_by_db    ${clue_info['infoid']}    1
+    ${head_list}    get_my_clue_list_for_yc
+    Should Not Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_my_clue_list_for_yc
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}

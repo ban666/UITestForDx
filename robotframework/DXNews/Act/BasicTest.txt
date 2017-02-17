@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+BasicTest
+    ${act_list}    get_activity_list
+    ${apply_result}    apply_activity    ${act_list[0]['id']}    123    13411111111
+    ${act_list2}    get_activity_list
+    Should Be Equal As Integers    ${act_list[0]['num']+1}    ${act_list2[0]['num']}
+    ${detail}    activity_detail    ${act_list[0]['id']}
+    Should Be Equal As Strings    ${detail['title']}    ${act_list[0]['title']}

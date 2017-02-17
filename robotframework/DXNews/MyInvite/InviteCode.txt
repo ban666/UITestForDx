@@ -1,0 +1,78 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+
+*** Variables ***
+${phone1}         13112345671
+${phone2}         13112345672
+${code_length}    4
+${tid1}           a_imei000000000000000
+${tid2}           a_imei000000000000001
+
+*** Test Cases ***
+PhoneInvCodeTest
+    #验证不同账号的邀请码不同
+    ${userinfo1}    regist_and_login    ${phone1}
+    ${userinfo2}    regist_and_login    ${phone2}
+    ${invcode1}    get_inv_code    ${userinfo1['dc']}
+    ${invcode2}    get_inv_code    ${userinfo2['dc']}
+    regist_and_login    ${phone1}    True
+    regist_and_login    ${phone2}    True
+    log    ${invcode1['invcode']}
+    log    ${invcode2['invcode']}
+    Should Not Be Equal As Strings    ${invcode1['invcode']}    ${invcode2['invcode']}
+
+ThirdInvCodeTest
+    ${userinfo_third1}    third_login_test    1
+    ${userinfo_third2}    third_login_test    2
+    ${userinfo_third3}    third_login_test    3
+    ${invcode1}    get_inv_code    ${userinfo_third1['dc']}
+    ${invcode2}    get_inv_code    ${userinfo_third2['dc']}
+    ${invcode3}    get_inv_code    ${userinfo_third3['dc']}
+    Should Not Be Equal As Strings    ${invcode1['invcode']}    ${invcode2['invcode']}
+    Should Not Be Equal As Strings    ${invcode1['invcode']}    ${invcode3['invcode']}
+    Should Not Be Equal As Strings    ${invcode3['invcode']}    ${invcode2['invcode']}
+    ${userinfo_third1}    third_login_test    1    True
+    ${userinfo_third2}    third_login_test    2    True
+    ${userinfo_third3}    third_login_test    3    True
+
+OldVersionTest
+    ${userinfo1}    regist_and_login    ${phone1}    False    3    hd_v=3.1.3
+    ${invcode1}    get_inv_code_by_db    ${userinfo1['data']['userinfo']['uid']}
+    ${userinfo_third1}    third_login_test_with_args    1    ${ak}    False    hd_v=3.1.3
+    ${invcode2}    get_inv_code_by_db    ${userinfo_third1['data']['userinfo']['uid']}
+    Length Should Be    ${invcode1}    ${code_length}
+    Length Should Be    ${invcode2}    ${code_length}
+    regist_and_login    ${phone1}    True
+    third_login_test    1    True
+
+NewVersionTest
+    ${userinfo1}    regist_and_login    ${phone1}    False    3    hd_v=3.1.4
+    ${invcode1}    get_inv_code    ${userinfo1['dc']}
+    ${userinfo_third1}    third_login_test_with_args    1    ${ak}    False    hd_v=3.1.4
+    ${invcode2}    get_inv_code    ${userinfo_third1['dc']}
+    Length Should Be    ${invcode1['invcode']}    ${code_length}
+    Length Should Be    ${invcode2['invcode']}    ${code_length}
+    regist_and_login    ${phone1}    True
+    third_login_test    1    True
+
+DeviceCodePhoneTest
+    ${userinfo1}    regist_and_login    ${phone1}    False    3    hd_tid=${tid1}
+    ${invcode1}    get_inv_code    ${userinfo1['dc']}
+    ${userinfo2}    regist_and_login    ${phone1}    False    3    hd_tid=${tid2}
+    ${invcode2}    get_inv_code    ${userinfo2['dc']}
+    regist_and_login    ${phone1}    True
+    log    ${invcode1['invcode']}
+    log    ${invcode2['invcode']}
+    Should Be Equal As Strings    ${invcode1['invcode']}    ${invcode2['invcode']}
+
+DeviceCodeThirdTest
+    ${userinfo1}    third_login_test_with_args    1    ${ak}    False    hd_tid=${tid1}
+    ${invcode1}    get_inv_code    ${userinfo1['dc']}
+    ${userinfo2}    third_login_test_with_args    1    ${ak}    False    hd_tid=${tid2}
+    ${invcode2}    get_inv_code    ${userinfo2['dc']}
+    third_login_test    1    True
+    log    ${invcode1['invcode']}
+    log    ${invcode2['invcode']}
+    Should Be Equal As Strings    ${invcode1['invcode']}    ${invcode2['invcode']}

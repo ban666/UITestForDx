@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+ErrorComment
+    [Documentation]    本用例目的为针对不同的新闻类型发表评论，并验证是否发送成功
+    ...    1、发送chnl请求获取第一个强制频道
+    ...    2、发送list请求获取所有为指定model以及可评论的新闻
+    ...    3、选取第一篇可评论的新闻发表 内容为空 的评论。
+    ...    4、验证步骤3中接口返回的错误码与msg。
+    [Template]    GetFirstArticleAndPostErrorComment
+    ${EMPTY}

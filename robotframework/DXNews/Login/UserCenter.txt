@@ -1,0 +1,19 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+
+*** Test Cases ***
+ModifyNameSuccess
+    [Template]    ModifyNameSuccessTest
+    123
+    aaa
+    中文
+    !@#!@$
+
+ModifyNameFail
+    [Template]    ModifyNameFailTest
+    ${EMPTY}
+    1234567890123456
+    习近平
+    \ \ \ \

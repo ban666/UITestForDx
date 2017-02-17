@@ -1,0 +1,49 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+
+*** Variables ***
+${ec_company1}    420281000010000
+${ec_company2}    420000000030000
+${ak1}            1
+${ak2}            7
+
+*** Test Cases ***
+CompanyDomainThirdTest
+    ${userinfo_third_a}    third_login_test_with_args    1    ${ak}    False    hd_ec=${ec_company1}
+    ${userinfo_third_b}    third_login_test_with_args    2    ${ak}
+    ${ret}    invite_user    ${userinfo_third_b}    ${userinfo_third_a}
+    log    ${ret}
+    third_login_test    1    True
+    third_login_test    2    True
+    Should Be Equal As Integers    ${ret['code']}    0
+
+CompanyDomainPhoneTest
+    ${userinfo_third_a}    regist_and_login    13411111121    False    3    hd_ec=${ec_company1}
+    ${userinfo_third_b}    regist_and_login    13411111122
+    ${ret}    invite_user    ${userinfo_third_b}    ${userinfo_third_a}
+    log    ${ret}
+    regist_and_login    13411111121    True
+    regist_and_login    13411111122    True
+    Should Be Equal As Integers    ${ret['code']}    0
+
+DiffrentAkThirdTest
+    ${userinfo_third_a}    third_login_test_with_args    1    ${ak1}    False    hd_ak=${ak1}
+    ${userinfo_third_b}    third_login_test_with_args    2    ${ak2}    False    hd_ak=${ak2}
+    ${ret}    invite_user    ${userinfo_third_b}    ${userinfo_third_a}
+    log    ${ret}
+    third_login_test    1    True
+    third_login_test    2    True
+    Should Not Be Equal As Integers    ${ret['code']}    0
+    Should Be Equal As Strings    ${ret['msg']}    邀请码错误，请重试！
+
+DiffrentAkPhoneTest
+    ${userinfo_third_a}    regist_and_login_with_args    13411111121    ${ak1}    False    3    hd_ak=${ak1}
+    ${userinfo_third_b}    regist_and_login_with_args    13411111122    ${ak2}    False    3    hd_ak=${ak2}
+    ${ret}    invite_user    ${userinfo_third_b}    ${userinfo_third_a}
+    log    ${ret}
+    regist_and_login    13411111121    True
+    regist_and_login    13411111122    True
+    Should Not Be Equal As Integers    ${ret['code']}    0
+    Should Be Equal As Strings    ${ret['msg']}    邀请码错误，请重试！

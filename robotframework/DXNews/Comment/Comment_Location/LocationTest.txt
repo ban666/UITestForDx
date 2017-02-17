@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+${ip}             124.88.67.14:80
+${location}       乌鲁木齐
+
+*** Test Cases ***
+LocationTest
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${ret}    check_comment_location    评论    ${article}    ${ip}    ${location}
+    Should Be True    ${ret}

@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Plugin_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+DiggComment
+    [Documentation]    本用例目的为测试点赞接口
+    ...    1、发送chnl请求获取第一个强制频道
+    ...    2、查找第一篇存在评论的新闻
+    ...    3、发送latest请求查询该新闻下评论，获取第一条评论
+    ...    4、对步骤3中获取的评论进行点赞
+    ...    5、验证点赞前的点赞数+1=点赞后的点赞数
+    [Template]    GetFirstCommentAndDigg
+    1

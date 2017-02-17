@@ -1,0 +1,11 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+AudilFailureTest
+    [Template]    CheckClueState
+    4
+    5
+    6
+    7

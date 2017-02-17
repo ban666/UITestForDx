@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+Recomment
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、针对不同类型的上头条页面发布评论，然后回复此评论。
+    [Template]    PostRecommentWithHeadComment
+    1    热门评论1    热门评论2
+    2    爆料评论1    爆料评论2
+    3    我秀评论1    我秀评论2

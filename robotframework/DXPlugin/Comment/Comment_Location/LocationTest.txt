@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Plugin_Info.txt
+
+*** Variables ***
+${ip}             115.192.248.216:28653
+${location}       杭州
+
+*** Test Cases ***
+LocationTest
+    ${chnl_list}=    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article_list}    get_type_article_list_for_comment    2    ${rechid['id']}
+    ${article}    get from list    ${article_list}    0
+    ${ret}    check_comment_location    评论    ${article}    ${ip}    ${location}
+    Should Be True    ${ret}

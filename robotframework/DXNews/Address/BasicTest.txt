@@ -1,0 +1,32 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Variables ***
+${name}           test
+${phone}          13411111111
+${zip}            123456
+${code}           420106
+${street}         location_test
+
+*** Test Cases ***
+BasicTest
+    clear_address
+    #add address A
+    ${ret}    save_address    ${name}    ${phone}    ${code}    ${street}    ${zip}
+    Should Be True    ${ret}
+    #add address B
+    ${ret}    save_address    ${name}    ${phone}    ${code}    ${street}    ${zip}
+    Should Be True    ${ret}
+    #default address test
+    ${ad_list}    get_address_list
+    set_default    ${ad_list[1]['id']}
+    ${ad_list2}    get_address_list
+    Should Be Equal As Integers    ${ad_list2[0]['id']}    ${ad_list[1]['id']}
+    #edit address
+    ${ret}    save_address    ${name}    ${phone}    ${code}    ${street}    ${zip}
+    ...    ${ad_list2[0]['id']}
+    Should Be True    ${ret}
+    ${ad_list3}    get_address_list
+    Length Should Be    ${ad_list3}    2
+    clear_address

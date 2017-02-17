@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+新闻正文页点赞点踩测试
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、新闻正文页可以正确的点赞与点踩
+    ArticleDiggTest

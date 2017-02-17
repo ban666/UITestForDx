@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+PostRecommAndCheck
+    [Template]    PostRecommAndCheckMyrecomm
+    我的回复评论1    我的回复评论2

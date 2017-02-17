@@ -1,0 +1,69 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+
+*** Test Cases ***
+RegistAndCheckCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    [Teardown]    regist_and_login    13477777777    True
+
+CommentCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${article}    get_first_chnl_article_for_comment
+    ${comment}    send comment    ${article}    123    ''    hd_dc=${userinfo['dc']}
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    102
+    : FOR    ${index}    IN RANGE    5
+    \    ${comment}    send comment    ${article}    123    ''    hd_dc=${userinfo['dc']}
+    \    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    \    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    110
+    [Teardown]    regist_and_login    13477777777    True
+
+ArticleDiggCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${article}    get_first_chnl_article_for_comment
+    ${digg}    digg_for_article    ${article}    1    hd_dc=${userinfo['dc']}
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    101
+    : FOR    ${index}    IN RANGE    10
+    \    ${digg}    digg_for_article    ${article}    1    hd_dc=${userinfo['dc']}
+    \    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    \    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    110
+    [Teardown]    regist_and_login    13477777777    True
+
+AdClickCoins
+    ${userinfo}    third_login_test    1
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    ${url}    replace_ad_url    ${userinfo['data']['userinfo']['uid']}    ${userinfo['dc']}
+    ${ret}    common.get_request    ${url}
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    110
+    : FOR    ${index}    IN RANGE    5
+    \    ${ret}    common.get_request    ${url}
+    \    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    \    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    110
+    [Teardown]    third_login_test    1    True
+
+ShareCoins
+    ${userinfo}    regist_and_login    13477777777
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    100
+    get_first_article_and_share    hd_dc=${userinfo['dc']}
+    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    Should Be Equal As Integers    ${point_list['total']}    105
+    : FOR    ${index}    IN RANGE    3
+    \    get_first_article_and_share    hd_dc=${userinfo['dc']}
+    \    ${point_list}    get_points_by_dc    ${userinfo['dc']}
+    \    log    ${point_list['total']}
+    Should Be Equal As Integers    ${point_list['total']}    110
+    [Teardown]    regist_and_login    13477777777    True

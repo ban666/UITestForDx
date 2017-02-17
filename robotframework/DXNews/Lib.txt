@@ -1,0 +1,630 @@
+*** Settings ***
+Resource          DX_Test_Info.txt
+Resource          ../public/public.txt
+Library           RequestsLibrary
+Library           HttpLibrary.HTTP
+Library           Collections
+Library           RequestsLibrary
+Library           ../public/ApiTestLib.py
+Library           ../public/RequestLib.py
+Library           pymysql
+Library           ../public/SubchnlApiLib.py
+Library           ../public/RequestForDx.py
+Library           ../public/ChnlRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/common.py
+Library           ../public/DbLib.py
+Library           ../public/StructCheck.py
+Library           ../public/ActivityRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/GovRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/AddressRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/HeadRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/UserTest.py
+Library           ../public/NewspaperRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+Library           ../public/CenterRequest.py    mcp/dx    ${ec}    ${cc}    ${p}    ${v}    ${ak}
+...               ${dc}    ${tid}    ${pid}    ${loc}    ${chnl}
+
+*** Keywords ***
+ChannelSubscriptionTester
+    [Arguments]    @{TestData}
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${ec}=    get from list    ${TestData}    1
+    ${cc}=    get from list    ${TestData}    6
+    ${add_channel}=    Query    select rechid,name,flag,model,drccid,type,sortNum from domain_released_channel where z in ('420000000010000',${ec}) and state=30 and not sortNum in ('10','20','30','40','50') and not drccid=0 \ order by sortNum,sort1 desc,sort3 desc limit ${chnl_count}
+    ${force_channel}=    Query    select rechid,name,flag,model,drccid,type,sortNum from domain_released_channel where z in ('420000000010000',${ec},${cc}) and state=30 and sortNum in ('10','20','30','40') order by sortNum,sort1 desc,sort3 desc
+    Disconnect From Database
+    Append to list    ${SubscirbedChannel}    ${force_channel}    ${add_channel}
+    log    ${SubscirbedChannel}
+    ${add}=    get length    ${add_channel}
+    ${chnl}    db_ret_to_str    ${add_channel}
+    log    ${chnl}
+    Append To List    ${TestData}    ${chnl}    ${add}
+    Append To List    ${RequestParams}    chnl    add
+    log    ${TestData}
+    ${Json_body}    ${ParamDic}=    Send Request    ${TestData}
+    ${result}=    json_to_str    ${Json_body['data']['channels']}
+
+ChannelRequestTester
+    [Arguments]    @{TestData}
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${cc}=    get from list    ${TestData}    6
+    ${loc_title}    Query    select name from domain where domainCode=${cc}
+    Disconnect From Database
+    ${RequestParams}    Get Slice From List    ${RequestParams}    0    -2
+    log    ${TestData}
+    ${Json_body}    ${ParamDic}=    Send Request    ${TestData}
+    log    ${Json_body['data']['sub']}
+    log    ${loc_title}
+    log    ${SubscirbedChannel}
+    ${result}=    result_check_for_chnl_request    ${SubscirbedChannel}    ${Json_body['data']['sub']}    ${loc_title}
+    Should Be True    ${result}
+
+CityChangeTester
+    [Arguments]    @{TestData}
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${ec}=    get from list    ${TestData}    0
+    ${cc}=    get from list    ${TestData}    1
+    ${cateid}=    Query    select cateid2 from released_channel where rechid =(SELECT domid from domain where domainCode = ${cc});
+    ${cateid}=    get from list    ${cateid[0]}    0
+    ${cc_information_force}=    Query    SELECT infoid,title from information where placeCode = ${cc} and z= ${default_ec} and state=30 and cateid=${cateid} and nsort=1 ORDER BY sort1 desc,sort3 desc limit 1;
+    ${cc_information}=    Query    SELECT infoid,title from information where placeCode = ${cc} and z=${default_ec} \ and state=30 and cateid=${cateid} ORDER BY sort1 desc,sort3 desc limit 1;
+    Disconnect From Database
+    ${result}=    change_city_and_check_article    ${cc_information_force}    ${cc_information}    ${ec}    ${cc}
+    log    ${cc_information_force}
+    log    ${cc_information}
+    Should Be True    ${result}
+
+GetFirstArticleAndPostCorrectComment
+    [Arguments]    ${article_type}    ${comment}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article_list}    get_type_article_list_for_comment    ${article_type}    ${rechid['id']}
+    ${article}    get from list    ${article_list}    0
+    ${comment_id}    send_comment    ${article}    ${comment}
+    ${comment_list}    get_comment    ${article}
+    ${first_comment}    get from list    ${comment_list}    0
+    Should Be Equal    ${first_comment['id']}    ${comment_id}
+    Should Be Equal    ${first_comment['content']}    ${comment}
+
+GetFirstArticleAndPostErrorComment
+    [Arguments]    ${comment}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_err_msg}    send_comment    ${article}    ${comment}
+    Should Be Equal    ${comment_err_msg['code']}    10000
+
+GetFirstCommentAndDigg
+    [Arguments]    @{args}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article_id}    ${comment_id}    get_first_comment_for_digg    ${rechid['id']}
+    ${digg_count_old}    get_digg_count    ${article_id}    ${comment_id}
+    digg    ${comment_id}
+    ${digg_count_new}    get_digg_count    ${article_id}    ${comment_id}
+    log    ${digg_count_old}
+    log    ${digg_count_new}
+    Should Be Equal    ${digg_count_old+1}    ${digg_count_new}
+
+PostCommentWithComment
+    [Arguments]    ${comment1}    ${comment2}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_id_1}    send_comment    ${article}    ${comment1}
+    ${comment_id_2}    send_comment    ${article}    ${comment2}    ${comment_id_1}
+    ${comment_list}    get_comment    ${article}
+    ${first_comment}    get from list    ${comment_list}    0
+    log    ${first_comment['quote']}
+    ${quote_id}    ${quote_content}    get_quote    ${first_comment['quote']}
+    ${compare_result}    str_compare    ${quote_content}    ${comment1}
+    Should Be Equal    ${first_comment['id']}    ${comment_id_2}
+    Should Be Equal    ${quote_id}    ${comment_id_1}
+    Should Be True    ${compare_result}
+
+PostCommentAndCheckMycomm
+    [Arguments]    ${comment}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_id}    send_comment    ${article}    ${comment}
+    ${get_comment_list}    get_mycomm
+    ${get_comment}    get from list    ${get_comment_list}    0
+    ${compare_result}    str_compare    ${get_comment['content']}    ${comment}
+    Should Be Equal    ${get_comment['id']}    ${comment_id}
+    Should Be True    ${compare_result}
+
+PostRecommAndCheckMyrecomm
+    [Arguments]    ${comment1}    ${comment2}
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_id_1}    send_comment    ${article}    ${comment1}
+    ${comment_id_2}    send_comment    ${article}    ${comment2}    ${comment_id_1}
+    ${comment_list}    get_my_recomm
+    ${first_comment}    get from list    ${comment_list}    0
+    log    ${first_comment['quote']}
+    ${quote_id}    ${quote_content}    get_quote    ${first_comment['quote']}
+    ${compare_result}    str_compare    ${quote_content}    ${comment1}
+    Should Be Equal    ${first_comment['id']}    ${comment_id_2}
+    Should Be Equal    ${quote_id}    ${comment_id_1}
+    Should Be True    ${compare_result}
+
+PostCommentWithHead
+    [Arguments]    ${cateid}    ${comment}
+    ${head_list}    get_head_list_for_comment    ${cateid}
+    ${article}    get from list    ${head_list}    0
+    ${comment_id}    send_comment    ${article['id']}    ${comment}
+    ${comment_list}    get_comment    ${article['id']}
+    ${first_comment}    get from list    ${comment_list}    0
+    Should Be Equal    ${first_comment['id']}    ${comment_id}
+    Should Be Equal    ${first_comment['content']}    ${comment}
+
+PostCommentWithHeadAndCheckMycomm
+    [Arguments]    ${cateid}    ${comment}
+    ${head_list}    get_head_list_for_comment    ${cateid}
+    ${article}    get from list    ${head_list}    0
+    ${comment_id}    send_comment    ${article['id']}    ${comment}
+    ${get_comment_list}    get_mycomm
+    ${first_comment}    get from list    ${get_comment_list}    0
+    Should Be Equal    ${first_comment['id']}    ${comment_id}
+    Should Be Equal    ${first_comment['content']}    ${comment}
+
+PostRecommentWithHeadComment
+    [Arguments]    ${cateid}    ${comment1}    ${comment2}
+    ${head_list}    get_head_list_for_comment    ${cateid}
+    ${article}    get from list    ${head_list}    0
+    ${comment_id_1}    send_comment    ${article['id']}    ${comment1}
+    ${comment_id_2}    send_comment    ${article['id']}    ${comment2}    ${comment_id_1}
+    ${comment_list}    get_comment    ${article['id']}
+    ${first_comment}    get from list    ${comment_list}    0
+    log    ${first_comment['quote']}
+    ${quote_id}    ${quote_content}    get_quote    ${first_comment['quote']}
+    ${compare_result}    str_compare    ${quote_content}    ${comment1}
+    Should Be Equal    ${first_comment['id']}    ${comment_id_2}
+    Should Be Equal    ${quote_id}    ${comment_id_1}
+    Should Be True    ${compare_result}
+
+PostRecommentWithHeadAndCheckMyrecomm
+    [Arguments]    ${cateid}    ${comment1}    ${comment2}
+    ${head_list}    get_head_list_for_comment    ${cateid}
+    ${article}    get from list    ${head_list}    0
+    ${comment_id_1}    send_comment    ${article['id']}    ${comment1}
+    ${comment_id_2}    send_comment    ${article['id']}    ${comment2}    ${comment_id_1}
+    ${comment_list}    get_my_recomm
+    ${first_comment}    get from list    ${comment_list}    0
+    log    ${first_comment['quote']}
+    ${quote_id}    ${quote_content}    get_quote    ${first_comment['quote']}
+    ${compare_result}    str_compare    ${quote_content}    ${comment1}
+    Should Be Equal    ${first_comment['id']}    ${comment_id_2}
+    Should Be Equal    ${quote_id}    ${comment_id_1}
+
+GetFirstVideoAddBullet
+    [Arguments]    ${content}
+    ${chnlid}=    chnl
+    ${uricode}    ${vtime}    get_first_video_and_add_bullet    ${content}    ${chnlid['sub'][0]['id']}
+    ${result}=    check_bullet_from_db_and_delete    ${uricode}    ${vtime}    ${content}
+    Should Be True    ${result}
+
+PagingTest
+    [Arguments]    ${paging_num}
+    ${num_list}    get_article_num    ${ak}    ${cc}    plug
+    ${rechid}    ${num}    get_rechid_by_limit    ${paging_num}    ${num_list}
+    ${article_list_page1}    get_list    ${rechid}
+    ${page1_id}    get from list    ${article_list_page1}    -1
+    ${article_list_page2}    get_list    ${rechid}    ${page1_id['id']}    nearer
+    Should Not Be Equal    ${page1_id['id']}    ${article_list_page2[1]['id']}
+
+FocusLimitTest
+    [Arguments]    ${focus_num}
+    ${num_list}    get_focus_num    ${ak}    ${cc}    dx
+    ${rechid}    ${num}    get_rechid_by_limit    ${focus_num}    ${num_list}
+    ${focus_list}    get_focus    ${rechid}
+    ${focus_length}    get length    ${focus_list}
+    Should Be Equal As Integers    ${focus_length}    ${focus_num}
+
+SpPageTest
+    ${chnlid}=    chnl
+    ${sp_list}    get_article_by_model    5    ${chnlid['sub'][0]['id']}
+    ${sp_page1}=    get_article    ${sp_list[0]}
+    ${sp_page2}=    get_article    ${sp_list[0]}    id=${sp_page1[-1]['id']}    cmd=farther
+    ${port}    convert to integer    ${db_port}
+    Connect To Database Using Custom Params    pymysql    host=${db_host},port=${port},user=${db_username},passwd=${db_password}, db=${db_name}
+    ${article_list}=    Query    select infoid from information,released_channel as rc where information.cateid=rc.cateid2 and rc.cateid2=(select cateid2 from released_channel where rechid=(select rechid from information where infoid=${sp_list[0]['id']})) and information.state=30 order by information.sort3 desc;
+    ${article_list}=    db_ret_to_list    ${article_list}
+    Should Be Equal As Strings    ${article_list[20]}    ${sp_page2[0]['id']}
+
+ArticleDiggTest
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    2    ${chnlid['sub'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_old}    ${unlike_digg_old}    get_digg_for_article    ${article_content}
+    log    ${like_digg_old}
+    log    ${unlike_digg_old}
+    #digg like
+    digg_for_article    ${article_content['id']}    1
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_new}    ${unlike_digg_new}    get_digg_for_article    ${article_content}
+    Should Be Equal    ${like_digg_old+1}    ${like_digg_new}
+    #digg unlike
+    digg_for_article    ${article_content['id']}    0
+    ${article_content}=    get_article    ${article_list[0]}
+    ${like_digg_new}    ${unlike_digg_new}    get_digg_for_article    ${article_content}
+    Should Be Equal    ${unlike_digg_old+1}    ${unlike_digg_new}
+
+ReplyCountTest
+    [Arguments]    ${model}    ${comment}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['sub'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${reply_count_old}=    Get From Dictionary    ${article_content}    repcount
+    ${article_id}    get_id    ${article_content}
+    ${comment_id_1}    send_comment    ${article_id}    ${comment}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${reply_count_new}=    Get From Dictionary    ${article_content}    repcount
+    log    ${reply_count_old}
+    log    ${reply_count_new}
+    Should Be Equal As Integers    ${reply_count_old+1}    ${reply_count_new}
+
+TurnoffCommentTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['sub'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}
+    ${article_id}    get_id    ${article_content}
+    change_comment_state_by_db    ${article_id}    1
+    ${err_content}    send_comment    ${article_id}    123
+    change_comment_state_by_db    ${article_id}    0
+    log    ${err_content}
+    Should Be Equal    ${err_content['code']}    10002
+    Should Be Equal    ${err_content['msg']}    评论已关闭
+
+GetArticleTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['sub'][0]['id']}
+    ${article_content}=    get_article    ${article_list[0]}    dx
+    log    ${article_content}=
+    ${result}    struct_check    ${article_content}    ${model}
+    Should Be True    ${result}
+
+HotwordsTest
+    ${ret}    get_hotword_by_db_and_check_ret
+    Should Be True    ${ret}
+
+ModelSearchTest
+    [Arguments]    ${model}
+    ${chnlid}=    chnl
+    ${article_list}    get_article_by_model    ${model}    ${chnlid['sub'][0]['id']}
+    ${search_ret}    search    ${article_list[0]['title']}
+    log    ${search_ret}
+    Should Be Equal As Strings    ${search_ret[0]['id']}    ${article_list[0]['id']}
+    Should Be Equal As Strings    ${search_ret[0]['model']}    ${article_list[0]['model']}
+    ${article_content}    get_article    ${article_list[0]}
+
+SymbolSearchTest
+    [Arguments]    ${keywords}
+    ${search_ret}    search    ${keywords}
+    log    ${search_ret}
+
+ThirdLogin
+    [Arguments]    ${third_platform}
+    ${userinfo}    third_login_test    ${third_platform}    True
+    log    ${userinfo}
+    Should Be Equal As Integers    ${userinfo['code']}    0
+
+ThirdNameLengthTest
+    [Arguments]    ${platform}    ${uid}    ${screen_name}    ${profile_image_url}
+    ${userinfo}    third_login_test    4    True    ${platform}    ${uid}    ${screen_name}
+    ...    ${profile_image_url}
+    ${name_length}    get length    ${screen_name}
+    log    ${name_length}
+    ${ret_length}    get length    ${userinfo['data']['userinfo']['scrname']}
+    ${length_check}    judge_length    ${name_length}    12    >
+    Should Be True    ${length_check}
+    Should Be Equal As Integers    ${ret_length}    12
+
+PhoneBindTest
+    [Arguments]    ${bind_type}
+    ${userinfo}    regist_and_login    13477777777
+    ${user_bind}    bind_third_test    ${userinfo['dc']}    ${bind_type}
+    Should Be Equal As Integers    ${user_bind['code']}    0
+    ${userinfo_third}    third_login_test    ${bind_type}    True
+    Should Be Equal As Integers    ${userinfo_third['data']['userinfo']['phone']}    13477777777
+    [Teardown]    regist_and_login    13477777777    True
+
+ThirdBindThirdTest
+    [Arguments]    ${third_type}    ${bind_type_a}    ${bind_type_b}    ${third_uid}    ${uid_type}
+    ${userinfo}    third_login_test    ${third_type}
+    ${user_bind}    bind_third_test    ${userinfo['dc']}    ${bind_type_a}
+    ${user_bind}    bind_third_test    ${userinfo['dc']}    ${bind_type_b}
+    ${userinfo_third_a}    third_login_test    ${bind_type_a}
+    ${userinfo_third_b}    third_login_test    ${bind_type_a}    True
+    Should Be Equal As Strings    ${userinfo_third_a['data']['userinfo']['${uid_type}']}    ${third_uid}
+    Should Be Equal As Strings    ${userinfo_third_b['data']['userinfo']['${uid_type}']}    ${third_uid}
+
+BindExistThirdTest
+    [Arguments]    ${third_type}    ${bind_type}
+    ${userinfo}    third_login_test    ${third_type}
+    ${userinfo_bind}    third_login_test    ${bind_type}
+    ${user_bind}    bind_third_test    ${userinfo['dc']}    ${bind_type}
+    log    ${user_bind}
+    third_login_test    ${third_type}    True
+    third_login_test    ${bind_type}    True
+    Should Be Equal As Strings    ${user_bind['msg']}    绑定失败，此帐号已存在
+    Should Be Equal As Integers    ${user_bind['code']}    30009
+
+ThirdBindPhoneTest
+    [Arguments]    ${third_type}
+    ${userinfo}    third_login_test    ${third_type}
+    ${ret}    bind_phone_test    ${userinfo['dc']}    13477777777
+    log    ret
+    ${userinfo_third}    third_login_test    ${third_type}    True
+    ${userinfo}    regist_and_login    13477777777    True
+    Should Be Equal As Integers    ${userinfo_third['data']['userinfo']['phone']}    13477777777
+
+ThirdBindExsitPhoneTest
+    [Arguments]    ${third_type}
+    ${userinfo}    third_login_test    ${third_type}
+    ${userinfo_phone}    regist_and_login    13477777777
+    ${user_bind}    bind_phone_test    ${userinfo['dc']}    13477777777
+    log    ret
+    ${userinfo_third}    third_login_test    ${third_type}    True
+    ${userinfo}    regist_and_login    13477777777    True
+    Should Be Equal As Strings    ${user_bind['msg']}    绑定失败，此手机号已存在
+    Should Be Equal As Integers    ${user_bind['code']}    30007
+
+ModifyNameSuccessTest
+    [Arguments]    ${name}
+    ${userinfo}    regist_and_login    13477777777
+    #send comment for article
+    ${chnl_list}    chnl
+    ${rechid}    get from list    ${chnl_list['sub']}    0
+    ${article}    get_first_article_for_comment    ${rechid['id']}
+    ${comment_id_1}    send_comment    ${article}    abc    ''    hd_dc=${userinfo['dc']}
+    #send comment for head
+    ${head_list}    get_head_list_for_comment    1
+    ${head}    get from list    ${head_list}    0
+    ${comment_id_2}    send_comment    ${head['id']}    cde    ''    hd_dc=${userinfo['dc']}
+    ${comment_1_old}    get_comment_by_id    ${article}    ${comment_id_1}
+    ${comment_2_old}    get_comment_by_id    ${head['id']}    ${comment_id_2}
+    log    ${userinfo['data']['userinfo']['scrname']}
+    log    ${comment_1_old['uname']}
+    log    ${comment_2_old['uname']}
+    Should Be Equal As Strings    ${comment_1_old['uname']}    ${userinfo['data']['userinfo']['scrname']}
+    Should Be Equal As Strings    ${comment_2_old['uname']}    ${userinfo['data']['userinfo']['scrname']}
+    ${result}    modify_screenname    ${userinfo['dc']}    ${name}
+    Should Be Equal As Integers    ${result['code']}    0
+    ${userinfo_new}    get_userinfo    ${userinfo['dc']}
+    Should Be Equal As Strings    ${userinfo_new['data']['userinfo']['scrname']}    ${name}
+    #send comment for article
+    ${comment_id_3}    send_comment    ${article}    123    ''    hd_dc=${userinfo['dc']}
+    #send comment for head
+    ${comment_id_4}    send_comment    ${head['id']}    456    ''    hd_dc=${userinfo['dc']}
+    ${comment_1_new}    get_comment_by_id    ${article}    ${comment_id_3}
+    ${comment_2_new}    get_comment_by_id    ${head['id']}    ${comment_id_4}
+    log    ${name}
+    log    ${comment_1_new['uname']}
+    log    ${comment_1_new['uname']}
+    Should Be Equal As Strings    ${comment_1_new['uname']}    ${name}
+    Should Be Equal As Strings    ${comment_2_new['uname']}    ${name}
+    [Teardown]    regist_and_login    13477777777    True
+
+ModifyNameFailTest
+    [Arguments]    ${name}
+    ${userinfo}    regist_and_login    13477777777
+    ${result}    modify_screenname    ${userinfo['dc']}    ${name}
+    log    ${result['msg']}
+    Should Not Be Equal As Integers    ${result['code']}    0
+    [Teardown]    regist_and_login    13477777777    True
+
+SendHeadFunc
+    [Arguments]    ${send_content}    ${head_type}    ${pic_list}    ${location}
+    ${ret}    send_clue    ${send_content}    ${head_type}    ${pic_list}    ${location}
+    Should Be True    ${ret}
+
+HeadLocationTest
+    [Arguments]    ${send_content}    ${head_type}    ${pic_list}    ${location}    ${dc}
+    ${ret}    send_clue    ${send_content}    ${head_type}    ${pic_list}    ${location}
+    Should Be True    ${ret}
+    sleep    3
+    review_head    ${dc}    1
+    ${head_list}    get_head_list    ${head_type}
+    log    ${head_list[0]['loc']}
+    log    ${location}
+    Should Be Equal As Strings    ${head_list[0]['loc']}    ${location}
+
+ExtraPointTest
+    [Arguments]    ${send_content}    ${head_type}    ${pic_list}    ${location}    ${dc}
+    ${ret}    send_clue    ${send_content}    ${head_type}    ${pic_list}    ${location}
+    Should Be True    ${ret}
+    sleep    3
+    review_head    ${dc}    1    123    1
+    ${head_list}    get_head_list    ${head_type}
+    Should Be Equal As Integers    ${head_list[0]['extrapoint']}    100
+
+UnpublishedHeadTest
+    [Arguments]    ${send_content}    ${head_type}    ${pic_list}    ${location}    ${dc}
+    ${ret}    send_clue    ${send_content}    ${head_type}    ${pic_list}
+    Should Be True    ${ret}
+    sleep    3
+    ${clue_info}    get_last_myhead_info    ${dc}
+    #未审核
+    ${head_list}    get_head_list    ${head_type}
+    Should Not Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_head_list    ${head_type}
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #不通过
+    change_article_state_by_db    ${clue_info['infoid']}    3
+    ${head_list}    get_head_list    ${head_type}
+    Should Not Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_head_list    ${head_type}
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #删除
+    change_article_state_by_db    ${clue_info['infoid']}    1
+    ${head_list}    get_head_list    ${head_type}
+    Should Not Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+
+HeadSortCheck
+    [Arguments]    ${subtype}
+    ${app_ret}    get_head_id    ${subtype}
+    ${sql_sorted_ret}    get_head_id_by_db    ${subtype}
+    log    ${app_ret}
+    log    ${sql_sorted_ret}
+    Should Be Equal    ${app_ret}    ${sql_sorted_ret}
+
+HeadDiggTest
+    [Arguments]    ${head_type}
+    ${head_list}    get_head_list    ${head_type}
+    ${head_detail}    get_head_detail    ${head_list[0]['id']}
+    digg_for_head    ${head_list[0]['id']}
+    ${head_list2}    get_head_list    ${head_type}
+    ${head_detail2}    get_head_detail    ${head_list[0]['id']}
+    Should Be Equal As Integers    ${head_list[0]['digg']+1}    ${head_list2[0]['digg']}
+    Should Be Equal As Integers    ${head_detail['clue']['digg']+1}    ${head_detail2['clue']['digg']}
+
+GovBasicTest
+    [Arguments]    ${code}
+    ${gov_list}    get_gov_list    ${code}
+    ${gov_detail}    get_gov_detail    ${gov_list[0]['id']}
+    get_gov_sublist    ${gov_detail['cate1']}
+
+MyHeadStateCheck
+    [Arguments]    ${head_type}
+    ${ret}    send_clue    123    ${head_type}
+    Should Be True    ${ret}
+    sleep    3
+    ${clue_info}    get_last_myhead_info    ${dc}
+    #未审核
+    ${head_list}    get_myhead_list
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_myhead_list
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #不通过
+    change_article_state_by_db    ${clue_info['infoid']}    3
+    ${head_list}    get_myhead_list
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_myhead_list
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #删除
+    change_article_state_by_db    ${clue_info['infoid']}    1
+    ${head_list}    get_myhead_list
+    Should Not Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+    #发布
+    change_article_state_by_db    ${clue_info['infoid']}    30
+    ${head_list}    get_myhead_list
+    Should Be Equal As Integers    ${clue_info['infoid']}    ${head_list[0]['id']}
+
+ClearAccountSettings
+    third_login_test    1    True
+    third_login_test    2    True
+    third_login_test    3    True
+    regist_and_login    13477777777    True
+
+PaperSourceCheck
+    [Arguments]    ${spuid}    ${src}
+    ${info_list}    get_all_infoid    ${spuid}
+    ${article_content}    get_article_for_paper    ${info_list[0]}
+    log    ${article_content['data']['newsource']}
+    Should Be Equal As Strings    ${article_content['data']['newsource']}    ${src}
+
+NoPermissionTodayCheck
+    [Arguments]    ${spuid}
+    ${today}    get_day    0
+    ${info_list}    get_all_infoid    ${spuid}    ${today}
+    ${article_content}    get_article_for_paper    ${info_list[0]}
+    Dictionary Should Contain Key    ${article_content['data']}    pay
+    Dictionary Should Not Contain Key    ${article_content['data']}    infoid
+
+NoPermissionYesterdayCheck
+    [Arguments]    ${spuid}
+    ${yesterday}    get_day    1
+    ${info_list}    get_all_infoid    ${spuid}    ${yesterday}
+    ${article_content}    get_article_for_paper    ${info_list[0]}
+    Dictionary Should Contain Key    ${article_content['data']}    infoid
+    Dictionary Should Not Contain Key    ${article_content['data']}    pay
+
+AddChnlCheck
+    [Arguments]    ${dc_test}    ${ec_test}    ${cc_test}
+    ${clear}    add_chnl    ''
+    ${subable_chnl}    get_sub_able_chnl    ${dc_test}    ${ec_test}    ${cc_test}
+    ${old_chnl}    get_subchnl_by_db    ${dc_test}    ${ec_test}    ${cc_test}
+    ${random}    gen_randint    0    10
+    ${add_ret}    add_chnl    ${subable_chnl[${random}]}    1    hd_ec=${ec_test}    hd_cc=${cc_test}
+    ${force_chnl}    get_force_chnl    ${ec_test}    ${cc_test}
+    ${chnl}    chnl_pop_city    hd_ec=${ec_test}    hd_cc=${cc_test}
+    ${chnl_id}    get_all_id    ${chnl['sub']}
+    ${new_chnl}    Combine Lists    ${force_chnl}    ${old_chnl}
+    log    ${new_chnl}
+    ${new_chnl}    list_pop_repeat    ${new_chnl}
+    Append to List    ${new_chnl}    ${subable_chnl[${random}]}
+    ${sta}    sub_sta    ${subable_chnl[${random}]}    hd_ec=${ec_test}    hd_cc=${cc_test}
+    Should Be Equal As Integers    ${sta['state']}    1
+    Lists Should Be Equal    ${new_chnl}    ${chnl_id}
+    unsub_chnl    ${subable_chnl[${random}]}    hd_ec=${ec_test}    hd_cc=${cc_test}
+    ${sta}    sub_sta    ${subable_chnl[${random}]}    hd_ec=${ec_test}    hd_cc=${cc_test}
+    Should Be Equal As Integers    ${sta['state']}    0
+
+DomainSearchCheck
+    [Arguments]    ${domain_ec}    ${domain_keyword}    ${dx_ec}    ${dx_keyword}
+    ${search_ret}    search    ${domain_keyword}    ''    ''    ''    hd_ec=${domain_ec}
+    Length Should Be    ${search_ret}    1
+    ${search_ret}    search    ${dx_keyword}    ''    ''    ''    hd_ec=${dx_ec}
+    Length Should Be    ${search_ret}    1
+
+PaidUserCheck
+    [Arguments]    ${dc_test}    ${spuid}
+    set_user_paid_for_newspapar    ${dc_test}    ${spuid}
+    #获取权限并查看当日报纸
+    ${info_list}    get_all_infoid    ${spuid}
+    ${article_content}    get_article_for_paper    ${info_list[0]}
+    Dictionary Should Contain Key    ${article_content['data']}    infoid
+    Dictionary Should Not Contain Key    ${article_content['data']}    pay
+    #查看昨日报纸
+    ${yesterday}    get_day    1
+    ${info_list}    get_all_infoid    ${spuid}    ${yesterday}
+    ${article_content}    get_article_for_paper    ${info_list[0]}
+    Dictionary Should Contain Key    ${article_content['data']}    infoid
+    Dictionary Should Not Contain Key    ${article_content['data']}    pay
+    [Teardown]    set_user_charge_for_newspapar    ${dc_test}    ${spuid}
+
+ProductTimeCheck
+    [Arguments]    ${spuid}
+    ${info}    get_product_info    ${spuid}
+    ${len}    get length    ${info['skuinfos'][0]['list']}
+    ${expect_list}    Create List    一天    一月    半年    一年
+    ${ret_list}    Create List
+    : FOR    ${index}    IN RANGE    ${len}
+    \    Append To List    ${ret_list}    ${info['skuinfos'][0]['list'][${index}]['v']}
+    log    ${ret_list}
+    Should Be Equal    ${ret_list}    ${expect_list}
+
+PriceCheck
+    [Arguments]    ${skuid}    ${price}
+    set_paper_price    ${skuid}    ${price}
+    ${info}    get_product_info    ${skuid}
+    Should Be Equal As Integers    ${price}    ${info['price_cent']}
+
+SuggestTest
+    [Arguments]    ${content}
+    ${time}    Get Time
+    ${ret1}    get_suggest    ${content}+${time}
+    Should Be True    ${ret1}
+    ${ret2}    get_suggest_by_db    ${content}+${time}
+    Should Be True    ${ret2}

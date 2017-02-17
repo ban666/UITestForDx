@@ -1,0 +1,18 @@
+*** Variables ***
+${ec}             \    # 当前域
+${dc}             1,0,0,jv5RDypcLOG1Ho6UTgf8NN5sUcLGl4Zvk2eH3fH3wEI=#5e9aa5554c03189c306b2ef944aa2334
+${ak}             1
+${v}              3.1.1
+${tid}            a_imei865479020303095
+${hd_chnl}        cnhubei
+${p}              a
+${pid}            ${EMPTY}
+${loc}            ${EMPTY}
+${default_ec}     420000000010000
+${cc}             ${EMPTY}
+${chnl}           ${EMPTY}
+${default_cc}     420100
+${mode}           mcp/plug/app
+${yc_dc}          1,0,0,jv5RDypcLOG1Ho6UTgf8NN5sUcLGl4Zvk2eH3fH3wEI=#4b92834c4132f165d37f04a278b36598
+${yc_ak}          7
+${yc_secret}      dJEeE#dIRq

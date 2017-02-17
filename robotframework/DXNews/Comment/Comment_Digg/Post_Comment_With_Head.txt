@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Test_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+CommentWithHead
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、针对不同类型的上头条页面进行评论
+    [Template]    PostCommentWithHead
+    1    热门评论
+    2    爆料评论
+    3    我秀评论

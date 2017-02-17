@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+专栏翻页测试
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、专栏可以正确翻页
+    SpPageTest

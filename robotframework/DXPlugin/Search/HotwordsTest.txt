@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Plugin_Info.txt
+
+*** Test Cases ***
+HotwordsTest
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、热词在后台配置超过10条的情况下，根据排序规则显示前10条
+    ...    2、热词在后台配置未超过10条的情况下，根据排序规则显示全部热词
+    HotWordsTest

@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+新闻详情页接口测试
+    [Documentation]    本条用例主要测试以下功能：
+    ...    1、不同model的新闻详情页接口正常
+    [Template]    GetArticleTest
+    2
+    3
+    4
+    5
+    13
+    17
+    25

@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+MyHeadStateTest
+    [Template]    MyHeadStateCheck
+    2
+    3

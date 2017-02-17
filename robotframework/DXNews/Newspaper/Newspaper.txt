@@ -1,0 +1,21 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+BasicTest
+    ${paper_list}    get_paper_content
+    log    ${paper_list}
+
+KindTest
+    ${ret}    paper_kind_check
+    Should Be True    ${ret}
+
+SourceTest
+    [Setup]    set_all_paper_free
+    [Template]    PaperSourceCheck
+    1    人民日报
+    2    湖北日报
+    3    湖北日报
+    4    湖北日报
+    6    长江日报

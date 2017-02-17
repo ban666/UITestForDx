@@ -1,0 +1,23 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+SearchTest
+    send_clue    baoliaotest    2    ''    ''
+    ${clue}    get_last_myhead_info    ${dc}
+    ${search_ret}    search_head    baoliaotest
+    ${content}    get_all_id    ${search_ret}
+    Should Not Contain    ${content}    ${clue['infoid']}
+    publish_del_article_by_db    ${clue['infoid']}
+    ${search_ret2}    search_head    baoliaotest
+    ${content2}    get_all_id    ${search_ret2}
+    Should Contain    ${content2}    ${clue['infoid']}
+    set_article_unpublished_by_db    ${clue['infoid']}
+    ${search_ret}    search_head    baoliaotest
+    ${content}    get_all_id    ${search_ret}
+    Should Not Contain    ${content}    ${clue['infoid']}
+    set_article_faield_by_db    ${clue['infoid']}
+    ${search_ret}    search_head    baoliaotest
+    ${content}    get_all_id    ${search_ret}
+    Should Not Contain    ${content}    ${clue['infoid']}

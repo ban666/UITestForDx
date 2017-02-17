@@ -1,0 +1,20 @@
+*** Settings ***
+Resource          ../../Lib.txt
+Resource          ../../DX_Plugin_Info.txt
+
+*** Variables ***
+
+*** Test Cases ***
+ArticleComment
+    [Documentation]    本用例目的为针对不同的新闻类型发表评论，并验证是否发送成功
+    ...    1、发送chnl请求获取第一个强制频道
+    ...    2、发送list请求获取所有为指定model以及可评论的新闻
+    ...    3、选取第一篇可评论的新闻发表评论，获取评论ID
+    ...    4、发送latest请求查询该新闻下评论，获取第一条评论
+    ...    5、对比第一条评论与步骤3中发送的评论ID与内容
+    ...
+    ...    注：需保证第一个强制频道下含有指定model的文章，否则将会导致找不到文章引起的用例FAIL
+    [Template]    GetFirstArticleAndPostCorrectComment
+    2    啦啦啦啊1
+    3    啦啦啦啊2
+    13    啦啦啦啊3

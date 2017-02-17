@@ -1,0 +1,31 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+NoPermissionTodayTest
+    [Setup]    set_all_paper_charge
+    [Template]    NoPermissionTodayCheck
+    1
+    2
+    3
+    4
+    6
+
+NoPermissionYesterdayTest
+    [Setup]    set_all_paper_charge
+    [Template]    NoPermissionYesterdayCheck
+    1
+    2
+    3
+    4
+    6
+
+PaidUserTest
+    [Template]    PaidUserCheck
+    ${dc}    1
+    ${dc}    2
+    ${dc}    3
+    ${dc}    4
+    ${dc}    5
+    ${dc}    6

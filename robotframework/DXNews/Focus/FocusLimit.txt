@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Test Cases ***
+FocusLimitTest
+    [Documentation]    本条用例主要验证以下功能：
+    ...    1、焦点图最多显示5条
+    [Template]    FocusLimitTest
+    5

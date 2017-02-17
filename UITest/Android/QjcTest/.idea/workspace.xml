@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd487c94-92b3-4b4e-91f8-961e67d2ba4a" name="Default" comment="" />
+    <list id="8bf2ef10-e57a-45ce-8470-cf4157c29658" name="New changelist" comment="Init commit" />
+    <ignored path="Janlinker_Test.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Janlinker_Test$ftest.coverage" NAME="ftest Coverage Results" MODIFIED="1448259208610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_HotwordsTest__2_.coverage" NAME="Unittests in HotwordsTest (2) Coverage Results" MODIFIED="1480995790076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticlePushTest.coverage" NAME="Unittests in ArticlePushTest Coverage Results" MODIFIED="1481247477178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentDiggtTest_testArticleComment.coverage" NAME="Unittest CommentDiggtTest.testArticleComment Coverage Results" MODIFIED="1479978538888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_PlayPauseTest.coverage" NAME="Unittests in PlayPauseTest Coverage Results" MODIFIED="1480987983200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticlePushTest__3_.coverage" NAME="Unittests in ArticlePushTest (3) Coverage Results" MODIFIED="1481249162958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentDiggCountTest_testMyCommentArticle.coverage" NAME="Unittest CommentDiggCountTest.testMyCommentArticle Coverage Results" MODIFIED="1479971634310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_test__1_.coverage" NAME="Unittest AmazingCommentTest.test (1) Coverage Results" MODIFIED="1480300565701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$common.coverage" NAME="common Coverage Results" MODIFIED="1480320517269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/QjcTest$DbLib.coverage" NAME="DbLib Coverage Results" MODIFIED="1481272366046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_BackgroundTest_testPlayerLocation.coverage" NAME="Unittest BackgroundTest.testPlayerLocation Coverage Results" MODIFIED="1480409798171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testZhuanlanSearch.coverage" NAME="Unittest HotwordsTest.testZhuanlanSearch Coverage Results" MODIFIED="1480994800599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AppQuitTest.coverage" NAME="Unittests in AppQuitTest Coverage Results" MODIFIED="1480562745702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_PushBackTest.coverage" NAME="Unittests in PushBackTest Coverage Results" MODIFIED="1481251357304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_AudioPushTest_testArticleAudio.coverage" NAME="Unittest AudioPushTest.testArticleAudio Coverage Results" MODIFIED="1481275922524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$elements_id.coverage" NAME="elements_id Coverage Results" MODIFIED="1480060444090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testVideoArticle.coverage" NAME="Unittest HotwordsTest.testVideoArticle Coverage Results" MODIFIED="1480996203198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_test.coverage" NAME="Unittest AmazingCommentTest.test Coverage Results" MODIFIED="1480300550021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentDiggtTest_testAudioComment.coverage" NAME="Unittest CommentDiggtTest.testAudioComment Coverage Results" MODIFIED="1479978930281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_BackgroundTest_testPlayCount.coverage" NAME="Unittest BackgroundTest.testPlayCount Coverage Results" MODIFIED="1480407900978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticlePushTest__2_.coverage" NAME="Unittests in ArticlePushTest (2) Coverage Results" MODIFIED="1481248791999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentDiggCountTest_testMyCommentArticle__1_.coverage" NAME="Unittest CommentDiggCountTest.testMyCommentArticle (1) Coverage Results" MODIFIED="1479972292628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_HotwordsTest__1_.coverage" NAME="Unittests in HotwordsTest (1) Coverage Results" MODIFIED="1481008952550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AmazingCommentTest__3_.coverage" NAME="Unittests in AmazingCommentTest (3) Coverage Results" MODIFIED="1480304394306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ArticleAudioTest_testPlayerLocation.coverage" NAME="Unittest ArticleAudioTest.testPlayerLocation Coverage Results" MODIFIED="1480467278459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$example_all.coverage" NAME="example_all Coverage Results" MODIFIED="1480388080050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush/examples/push_examples" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testNotificationPause.coverage" NAME="Unittest PlayPauseTest.testNotificationPause Coverage Results" MODIFIED="1480383886414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ReplyCountTest_testMyCommentArticle.coverage" NAME="Unittest ReplyCountTest.testMyCommentArticle Coverage Results" MODIFIED="1480035400741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentForbiddenTest_testVideoComment.coverage" NAME="Unittest CommentForbiddenTest.testVideoComment Coverage Results" MODIFIED="1479974024381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_DefaultTest.coverage" NAME="Unittests in DefaultTest Coverage Results" MODIFIED="1481250428840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$Unittests_in_LoginTest.coverage" NAME="Unittests in LoginTest Coverage Results" MODIFIED="1449038686746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_BackgroundTest.coverage" NAME="Unittests in BackgroundTest Coverage Results" MODIFIED="1480321423644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_JpushBasicTest.coverage" NAME="Unittests in JpushBasicTest Coverage Results" MODIFIED="1481249737048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AmazingCommentTest.coverage" NAME="Unittests in AmazingCommentTest Coverage Results" MODIFIED="1480303831508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testExtSearch.coverage" NAME="Unittest HotwordsTest.testExtSearch Coverage Results" MODIFIED="1480994629061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ArticleAudioTest_testDestroy.coverage" NAME="Unittest ArticleAudioTest.testDestroy Coverage Results" MODIFIED="1480467218770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AricileCommentTest_testArticleComment__1_.coverage" NAME="Unittest AricileCommentTest.testArticleComment (1) Coverage Results" MODIFIED="1480040891292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_testExsit__1_.coverage" NAME="Unittest AmazingCommentTest.testExsit (1) Coverage Results" MODIFIED="1480317801669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentForbiddenTest_testPhotoComment.coverage" NAME="Unittest CommentForbiddenTest.testPhotoComment Coverage Results" MODIFIED="1479974068578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticlePushTest__1_.coverage" NAME="Unittests in ArticlePushTest (1) Coverage Results" MODIFIED="1481248593561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_PlayPauseTest__1_.coverage" NAME="Unittests in PlayPauseTest (1) Coverage Results" MODIFIED="1480989057656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AricileCommentTest__1_.coverage" NAME="Unittests in AricileCommentTest (1) Coverage Results" MODIFIED="1480041018773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AricileCommentTest_testArticleComment__2_.coverage" NAME="Unittest AricileCommentTest.testArticleComment (2) Coverage Results" MODIFIED="1480042433568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testZhuantiSearch.coverage" NAME="Unittest HotwordsTest.testZhuantiSearch Coverage Results" MODIFIED="1480994735508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ArticleAudioTest_testBack.coverage" NAME="Unittest ArticleAudioTest.testBack Coverage Results" MODIFIED="1480467092576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_NotificationTest.coverage" NAME="Unittests in NotificationTest Coverage Results" MODIFIED="1480467488510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testBackLocation.coverage" NAME="Unittest PlayPauseTest.testBackLocation Coverage Results" MODIFIED="1480385058052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ArticleAudioTest_testPauseBack.coverage" NAME="Unittest ArticleAudioTest.testPauseBack Coverage Results" MODIFIED="1480469038001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AmazingCommentTest__2_.coverage" NAME="Unittests in AmazingCommentTest (2) Coverage Results" MODIFIED="1480304738305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_BackgroundTest__1_.coverage" NAME="Unittests in BackgroundTest (1) Coverage Results" MODIFIED="1480321610187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_HotwordsTest.coverage" NAME="Unittests in HotwordsTest Coverage Results" MODIFIED="1480996705110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$example_audience.coverage" NAME="example_audience Coverage Results" MODIFIED="1481250800601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush/examples/push_examples" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ReplyCountTest_testCommentAudio.coverage" NAME="Unittest ReplyCountTest.testCommentAudio Coverage Results" MODIFIED="1480056637301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/comment" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticlePushTest__4_.coverage" NAME="Unittests in ArticlePushTest (4) Coverage Results" MODIFIED="1481249421524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testJump.coverage" NAME="Unittest PlayPauseTest.testJump Coverage Results" MODIFIED="1480404104348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1479970252882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_ArticleAmazingCommentTest.coverage" NAME="Unittests in ArticleAmazingCommentTest Coverage Results" MODIFIED="1480037292974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$config.coverage" NAME="config Coverage Results" MODIFIED="1449037970561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$TestLogin.coverage" NAME="TestLogin Coverage Results" MODIFIED="1451978677177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testFinish.coverage" NAME="Unittest PlayPauseTest.testFinish Coverage Results" MODIFIED="1480403928711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testPlayCount.coverage" NAME="Unittest HotwordsTest.testPlayCount Coverage Results" MODIFIED="1481007896806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$screenshot.coverage" NAME="screenshot Coverage Results" MODIFIED="1480301593328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_NotificationSwipeTest_testPlayCount.coverage" NAME="Unittest NotificationSwipeTest.testPlayCount Coverage Results" MODIFIED="1480386382768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1449039375354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_AppQuitTest_testNotificationPause.coverage" NAME="Unittest AppQuitTest.testNotificationPause Coverage Results" MODIFIED="1481266816092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_ElementsTest.coverage" NAME="Unittests in ElementsTest Coverage Results" MODIFIED="1480319314149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testPlayCount__2_.coverage" NAME="Unittest PlayPauseTest.testPlayCount (2) Coverage Results" MODIFIED="1480381757845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_BackgroundTest_testAudioHome.coverage" NAME="Unittest BackgroundTest.testAudioHome Coverage Results" MODIFIED="1480325128039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_VideoPushTest_testLive.coverage" NAME="Unittest VideoPushTest.testLive Coverage Results" MODIFIED="1481272720519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/update" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ArticleAmazingCommentTest_testExsit.coverage" NAME="Unittest ArticleAmazingCommentTest.testExsit Coverage Results" MODIFIED="1480036981825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$test.coverage" NAME="test Coverage Results" MODIFIED="1480301402851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_PlayPauseTest__3_.coverage" NAME="Unittests in PlayPauseTest (3) Coverage Results" MODIFIED="1480575195239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_VideoPushTest_testVideo.coverage" NAME="Unittest VideoPushTest.testVideo Coverage Results" MODIFIED="1481252958588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentSlideTest_testSlideComment.coverage" NAME="Unittest CommentSlideTest.testSlideComment Coverage Results" MODIFIED="1480034580751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testTargeturlSearch.coverage" NAME="Unittest HotwordsTest.testTargeturlSearch Coverage Results" MODIFIED="1480994855069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_VideoPushTest_testLive__1_.coverage" NAME="Unittest VideoPushTest.testLive (1) Coverage Results" MODIFIED="1481503250932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/update" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentBasicTest_testAudioComment.coverage" NAME="Unittest CommentBasicTest.testAudioComment Coverage Results" MODIFIED="1479977805505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$adb.coverage" NAME="adb Coverage Results" MODIFIED="1481011538761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_ArticleAudioTest.coverage" NAME="Unittests in ArticleAudioTest Coverage Results" MODIFIED="1480466878930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_VideoPushTest.coverage" NAME="Unittests in VideoPushTest Coverage Results" MODIFIED="1481250541618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testPlayCount__1_.coverage" NAME="Unittest PlayPauseTest.testPlayCount (1) Coverage Results" MODIFIED="1480380946190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_NotificationSwipeTest.coverage" NAME="Unittests in NotificationSwipeTest Coverage Results" MODIFIED="1480389606042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AricileCommentTest_testArticleComment.coverage" NAME="Unittest AricileCommentTest.testArticleComment Coverage Results" MODIFIED="1480044238906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$example_audience.coverage" NAME="example_audience Coverage Results" MODIFIED="1480388546602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush/examples/push_examples" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_CommentDiggtTest.coverage" NAME="Unittests in CommentDiggtTest Coverage Results" MODIFIED="1479978272536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_testPlayCount.coverage" NAME="Unittest AmazingCommentTest.testPlayCount Coverage Results" MODIFIED="1480323100806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$excute.coverage" NAME="excute Coverage Results" MODIFIED="1452047829536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_PlayPauseTest__2_.coverage" NAME="Unittests in PlayPauseTest (2) Coverage Results" MODIFIED="1480564663965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/video" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_MultiPushTest.coverage" NAME="Unittests in MultiPushTest Coverage Results" MODIFIED="1481249986726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$Unittests_in___init__.coverage" NAME="Unittests in __init__ Coverage Results" MODIFIED="1451978452479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$CommentBasicTest.coverage" NAME="CommentBasicTest Coverage Results" MODIFIED="1479970241533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_UnsupportTest.coverage" NAME="Unittests in UnsupportTest Coverage Results" MODIFIED="1481252491553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_NotificationClearTest.coverage" NAME="Unittests in NotificationClearTest Coverage Results" MODIFIED="1481250070018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/QjcTest$adb.coverage" NAME="adb Coverage Results" MODIFIED="1481274107049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_ProgressTest.coverage" NAME="Unittests in ProgressTest Coverage Results" MODIFIED="1480478035813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/QjcTest$jpush_handler.coverage" NAME="jpush_handler Coverage Results" MODIFIED="1481253230680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_PlayPauseTest_testPlayCount.coverage" NAME="Unittest PlayPauseTest.testPlayCount Coverage Results" MODIFIED="1480558270136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/video" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testArticleSearch.coverage" NAME="Unittest HotwordsTest.testArticleSearch Coverage Results" MODIFIED="1480995753083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentDiggtTest_testExtComment.coverage" NAME="Unittest CommentDiggtTest.testExtComment Coverage Results" MODIFIED="1480056816099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/comment" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_testExsit__2_.coverage" NAME="Unittest AmazingCommentTest.testExsit (2) Coverage Results" MODIFIED="1480296074947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testBigPicArticle.coverage" NAME="Unittest HotwordsTest.testBigPicArticle Coverage Results" MODIFIED="1480992131002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$LoginTest.coverage" NAME="LoginTest Coverage Results" MODIFIED="1449039183751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_CommentForbiddenTest_testAudioComment.coverage" NAME="Unittest CommentForbiddenTest.testAudioComment Coverage Results" MODIFIED="1479974419225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_testNonExsit.coverage" NAME="Unittest AmazingCommentTest.testNonExsit Coverage Results" MODIFIED="1480302918485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AmazingCommentTest_testExsit.coverage" NAME="Unittest AmazingCommentTest.testExsit Coverage Results" MODIFIED="1480402874745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_CommentForbiddenTest.coverage" NAME="Unittests in CommentForbiddenTest Coverage Results" MODIFIED="1479979300123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_VideoPushTest__1_.coverage" NAME="Unittests in VideoPushTest (1) Coverage Results" MODIFIED="1481250678025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_BackgroundTest_testBack.coverage" NAME="Unittest BackgroundTest.testBack Coverage Results" MODIFIED="1480411808680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_ArticleAmazingCommentTest__1_.coverage" NAME="Unittests in ArticleAmazingCommentTest (1) Coverage Results" MODIFIED="1480037583101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$Unittest_TestLogin_TestFunc1.coverage" NAME="Unittest TestLogin.TestFunc1 Coverage Results" MODIFIED="1451978339373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/BasicFunctionTest" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_AppQuitTest_testQuit.coverage" NAME="Unittest AppQuitTest.testQuit Coverage Results" MODIFIED="1480466795505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_BackgroundTest__2_.coverage" NAME="Unittests in BackgroundTest (2) Coverage Results" MODIFIED="1480321908919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_HotwordsTest_testFlagArticle.coverage" NAME="Unittest HotwordsTest.testFlagArticle Coverage Results" MODIFIED="1480992486321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/search" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_AudioPushTest.coverage" NAME="Unittests in AudioPushTest Coverage Results" MODIFIED="1481250871459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AmazingCommentTest__1_.coverage" NAME="Unittests in AmazingCommentTest (1) Coverage Results" MODIFIED="1480303125120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/Janlinker_Test$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1449039833097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittest_ReplyCountTest_testMyCommentArticlePhoto.coverage" NAME="Unittest ReplyCountTest.testMyCommentArticlePhoto Coverage Results" MODIFIED="1480056464448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/comment" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittests_in_ArticleAudioTest.coverage" NAME="Unittests in ArticleAudioTest Coverage Results" MODIFIED="1481273351352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/audio" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AricileCommentTest__2_.coverage" NAME="Unittests in AricileCommentTest (2) Coverage Results" MODIFIED="1480041170590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_VideoPushTest_testLive__2_.coverage" NAME="Unittest VideoPushTest.testLive (2) Coverage Results" MODIFIED="1481272739282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/update" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$excute.coverage" NAME="excute Coverage Results" MODIFIED="1481009533854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QjcTest$Unittest_PushBackTest_testBasic.coverage" NAME="Unittest PushBackTest.testBasic Coverage Results" MODIFIED="1481252375900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$DbLib.coverage" NAME="DbLib Coverage Results" MODIFIED="1480064782525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lib" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$example_options.coverage" NAME="example_options Coverage Results" MODIFIED="1480576279478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/jpush/examples/push_examples" />
+    <SUITE FILE_PATH="coverage/DxPlugUiTest$Unittests_in_AricileCommentTest.coverage" NAME="Unittests in AricileCommentTest Coverage Results" MODIFIED="1480038228642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/SDKTest" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Janlinker_Test" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="elements_id.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lib/elements_id.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3211" max-vertical-offset="3952">
+              <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentTimeTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/comment/CommentTimeTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="2261">
+              <caret line="85" column="57" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticlePushTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/jpush/ArticlePushTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1976">
+              <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui_push.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lib/ui_push.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1235">
+              <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+              <folding>
+                <element signature="e#48#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lib/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2347526" vertical-offset="24" max-vertical-offset="1520">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbLib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lib/DbLib.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5938" max-vertical-offset="8246">
+              <caret line="337" column="19" selection-start-line="327" selection-start-column="4" selection-end-line="337" selection-end-column="19" />
+              <folding>
+                <element signature="e#48#67#0" expanded="true" />
+                <marker date="1481272366027" expanded="true" signature="231:326" placeholder="select dmkid..danmaku..." />
+                <marker date="1481272366027" expanded="true" signature="508:542" placeholder="delete from ..." />
+                <marker date="1481272366027" expanded="true" signature="801:889" placeholder="SELECT domai..domain..." />
+                <marker date="1481272366027" expanded="true" signature="937:1136" placeholder="select rechi..domain_released_channel..." />
+                <marker date="1481272366027" expanded="true" signature="1186:1420" placeholder="select rechi..domain_released_channel..." />
+                <marker date="1481272366027" expanded="true" signature="1745:1884" placeholder="select missi..information..." />
+                <marker date="1481272366027" expanded="true" signature="1788:1861" placeholder="select catei..released_channel..." />
+                <marker date="1481272366027" expanded="true" signature="2339:2427" placeholder="SELECT domai..domain..." />
+                <marker date="1481272366027" expanded="true" signature="2477:2625" placeholder="select missi..information..." />
+                <marker date="1481272366027" expanded="true" signature="2520:2593" placeholder="select catei..released_channel..." />
+                <marker date="1481272366027" expanded="true" signature="3128:3237" placeholder="update sourc..." />
+                <marker date="1481272366027" expanded="true" signature="3182:3234" placeholder="SELECT sourc..information..." />
+                <marker date="1481272366027" expanded="true" signature="3449:3537" placeholder="SELECT domai..domain..." />
+                <marker date="1481272366027" expanded="true" signature="3595:3667" placeholder="select * fro..hotwords..." />
+                <marker date="1481272366027" expanded="true" signature="3869:3957" placeholder="SELECT domai..domain..." />
+                <marker date="1481272366027" expanded="true" signature="4033:4125" placeholder="select infoi..information..." />
+                <marker date="1481272366027" expanded="true" signature="4385:4416" placeholder="delete from ..." />
+                <marker date="1481272366027" expanded="true" signature="4541:4579" placeholder="select invnu..member..." />
+                <marker date="1481272366027" expanded="true" signature="4733:4772" placeholder="select invco..member..." />
+                <marker date="1481272366027" expanded="true" signature="4943:5035" placeholder="select comTh..information..." />
+                <marker date="1481272366027" expanded="true" signature="5330:5381" placeholder="select infoi..information..." />
+                <marker date="1481272366027" expanded="true" signature="6035:6169" placeholder="select t2.re..information..." />
+                <marker date="1481272366027" expanded="true" signature="6527:6664" placeholder="update infor..." />
+                <marker date="1481272366027" expanded="true" signature="6875:7010" placeholder="select t2.re..information..." />
+                <marker date="1481272366027" expanded="true" signature="7284:7422" placeholder="update infor..." />
+                <marker date="1481272366027" expanded="true" signature="7631:7677" placeholder="select digg,..comment..." />
+                <marker date="1481272366027" expanded="true" signature="8020:8071" placeholder="update comme..." />
+                <marker date="1481272366027" expanded="true" signature="8297:8431" placeholder="SELECT t2.su..information..." />
+                <marker date="1481272366027" expanded="true" signature="8812:8953" placeholder="update infor..." />
+                <marker date="1481272366027" expanded="true" signature="9186:9326" placeholder="SELECT t2.op..information..." />
+                <marker date="1481272366027" expanded="true" signature="9731:9878" placeholder="update infor..." />
+                <marker date="1481272366027" expanded="true" signature="10491:10543" placeholder="UPDATE comme..." />
+                <marker date="1481272366027" expanded="true" signature="10727:10770" placeholder="select creat..comment..." />
+                <marker date="1481272366027" expanded="true" signature="11062:11212" placeholder="select t2.pl..information..." />
+                <marker date="1481272366027" expanded="true" signature="11701:11858" placeholder="update infor..." />
+                <marker date="1481272366027" expanded="true" signature="12162:12297" placeholder="select t1.in..information..." />
+                <marker date="1481272366027" expanded="true" signature="12466:12501" placeholder="SELECT mid f..member..." />
+                <marker date="1481272366027" expanded="true" signature="12771:12819" placeholder="select domai..domain..." />
+                <marker date="1481272366027" expanded="true" signature="13007:13083" placeholder="select versi..vermgr..." />
+                <marker date="1481272366027" expanded="true" signature="13281:13389" placeholder="update vermg..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lib/adb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2665" max-vertical-offset="3762">
+              <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appium_lib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lib/appium_lib.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8452" max-vertical-offset="9291">
+              <caret line="466" column="49" selection-start-line="463" selection-start-column="4" selection-end-line="469" selection-end-column="30" />
+              <folding>
+                <element signature="e#171#199#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/update/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="2299">
+              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VideoPushTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/jpush/VideoPushTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2166">
+              <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Scripts/jpush/examples/push_examples/conf.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_audience.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/NotificationCloseTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/temp.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/AudioCommentListTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/NetworkChangeTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/NotificationTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/ProgressTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/BackgroundTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/BackTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/PlayCountTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/comment/CommentReplyTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/__init__.py" />
+        <option value="$PROJECT_DIR$/Scripts/video.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/__init__.py" />
+        <option value="$PROJECT_DIR$/Scripts/video/PlayPauseTest.py" />
+        <option value="$PROJECT_DIR$/Lib/ui_video.py" />
+        <option value="$PROJECT_DIR$/Lib/ui_search.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/__init__.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_options.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/test.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/HotwordsTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/NonResultTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/SearchBasicTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/SearchCancelTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/SearchStyleTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/search/SearchTwiceTest.py" />
+        <option value="$PROJECT_DIR$/Lib/ui_comment.py" />
+        <option value="$PROJECT_DIR$/Lib/jpush_config.py" />
+        <option value="$PROJECT_DIR$/Lib/common.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/ArticlePushTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/NotificationClearTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/DefaultTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/VideoPushTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/PushBackTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/UnsupportTest.py" />
+        <option value="$PROJECT_DIR$/Lib/jpush_handler.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/AudioDestroyTest.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/screenshot_for_auido.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/AppQuitTest.py" />
+        <option value="$PROJECT_DIR$/Lib/DbLib.py" />
+        <option value="$PROJECT_DIR$/Scripts/audio/ArticleAudioTest.py" />
+        <option value="$PROJECT_DIR$/Lib/ui_settings.py" />
+        <option value="$PROJECT_DIR$/Scripts/jpush/AudioPushTest.py" />
+        <option value="$PROJECT_DIR$/excute.py" />
+        <option value="$PROJECT_DIR$/Lib/appium_lib.py" />
+        <option value="$PROJECT_DIR$/Scripts/update/test.py" />
+        <option value="$PROJECT_DIR$/Lib/adb.py" />
+        <option value="$PROJECT_DIR$/Lib/elements_id.py" />
+        <option value="$PROJECT_DIR$/Lib/ui_push.py" />
+        <option value="$PROJECT_DIR$/Lib/config.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="update" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jpush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QjcTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="58" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="93" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="706" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="58" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="73" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="726" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Janlinker_Test" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Janlinker_Test" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\workspace\UITest\DxPlugUiTest\Scripts\recycle" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittest VideoPushTest.testLive (1)">
+    <configuration default="false" name="adb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lib/adb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest VideoPushTest.testLive (2)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts/update" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/update/test.py" />
+      <option name="CLASS_NAME" value="VideoPushTest" />
+      <option name="METHOD_NAME" value="testLive" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in ArticleAudioTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts/audio" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/audio/ArticleAudioTest.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest AudioPushTest.testArticleAudio" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts/jpush" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/jpush/AudioPushTest.py" />
+      <option name="CLASS_NAME" value="AudioPushTest" />
+      <option name="METHOD_NAME" value="testArticleAudio" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest VideoPushTest.testLive (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts/update" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/update/test.py" />
+      <option name="CLASS_NAME" value="VideoPushTest" />
+      <option name="METHOD_NAME" value="testLive" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unnamed" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Janlinker_Test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/SDKTest/CommentBasicTest.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Python.adb" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest VideoPushTest.testLive (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in ArticleAudioTest" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest AudioPushTest.testArticleAudio" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittest VideoPushTest.testLive (1)" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest VideoPushTest.testLive (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest AudioPushTest.testArticleAudio" />
+        <item index="2" class="java.lang.String" itemvalue="Python.adb" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in ArticleAudioTest" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest VideoPushTest.testLive (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd487c94-92b3-4b4e-91f8-961e67d2ba4a" name="Default" comment="" />
+      <changelist id="8bf2ef10-e57a-45ce-8470-cf4157c29658" name="New changelist" comment="Init commit" />
+      <created>1448242695379</created>
+      <option name="number" value="Default" />
+      <updated>1448242695379</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1448243127375</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1448243127375</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1448589415538</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1448589415538</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Init commit 2015.12.02">
+      <created>1449046748950</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1449046748950</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32675907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628062" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293348" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914287" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28740582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39886364" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Init commit" />
+    <MESSAGE value="test" />
+    <MESSAGE value="Init commit 2015.12.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit 2015.12.02" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="8" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="u'Step %s:新闻能够搜索并查看测试：OK' % (str(step))" language="Python" />
+        <watch expression="u'Step %s:%s新闻能够搜索并查看测试：OK' " language="Python" />
+        <watch expression="'1'" language="Python" />
+        <watch expression="u'1：OK' %" language="Python" />
+        <watch expression="u'1'" language="Python" />
+        <watch expression="u'1：OK' " language="Python" />
+        <watch expression="u'1：OK'" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_all.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/AudioCommentListTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1805">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/httplib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.32" vertical-offset="7263" max-vertical-offset="27455">
+          <caret line="423" column="30" selection-start-line="423" selection-start-column="30" selection-end-line="423" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/video/PlayPauseTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="2375">
+          <caret line="74" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/examples/push_examples/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1121">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ui_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ChnlRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11514">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/HotwordsTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1615">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/NonResultTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="1615">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/SearchBasicTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="2489">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/SearchStyleTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="2812">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/SearchCancelTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1615">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/search/SearchTwiceTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="868" max-vertical-offset="1881">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/comment/CommentReplyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1786">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ui_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="3572">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/comment/CommentBasicTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46180555" vertical-offset="2280" max-vertical-offset="3534">
+          <caret line="138" column="39" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/jpush_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4050" max-vertical-offset="4769">
+          <caret line="228" column="13" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ui_video.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="1007">
+          <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/PlayPauseTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="988" max-vertical-offset="2698">
+          <caret line="84" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_audience.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/examples/push_examples/example_silent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Python27/Lib/site-packages/jpush-3.2.0-py2.7.egg!/jpush/push/payload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="3477">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/jpush_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1311">
+          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/appium/webdriver/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11094" max-vertical-offset="15428">
+          <caret line="611" column="52" selection-start-line="611" selection-start-column="52" selection-end-line="611" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/AudioDestroyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1767">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/screenshot_for_auido.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="869">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/AppQuitTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2020" max-vertical-offset="3762">
+          <caret line="128" column="95" selection-start-line="128" selection-start-column="95" selection-end-line="128" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/audio/ArticleAudioTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3357" max-vertical-offset="4674">
+          <caret line="193" column="24" selection-start-line="178" selection-start-column="8" selection-end-line="193" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1102">
+          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ui_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1368">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="71" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/AudioPushTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1248" max-vertical-offset="2451">
+          <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/DefaultTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="492" max-vertical-offset="1672">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/JpushBasicTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2204">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/MultiPushTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/NotificationClearTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1596">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/PushBackTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1347" max-vertical-offset="2527">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/UnsupportTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1710">
+          <caret line="54" column="70" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/VideoPushTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2166">
+          <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/update/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="2299">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/appium_lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8452" max-vertical-offset="9291">
+          <caret line="466" column="49" selection-start-line="463" selection-start-column="4" selection-end-line="469" selection-end-column="30" />
+          <folding>
+            <element signature="e#171#199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/comment/CommentTimeTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="2261">
+          <caret line="85" column="57" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/jpush/ArticlePushTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1976">
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/DbLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5938" max-vertical-offset="8246">
+          <caret line="337" column="19" selection-start-line="327" selection-start-column="4" selection-end-line="337" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#67#0" expanded="true" />
+            <marker date="1481272366027" expanded="true" signature="231:326" placeholder="select dmkid..danmaku..." />
+            <marker date="1481272366027" expanded="true" signature="508:542" placeholder="delete from ..." />
+            <marker date="1481272366027" expanded="true" signature="801:889" placeholder="SELECT domai..domain..." />
+            <marker date="1481272366027" expanded="true" signature="937:1136" placeholder="select rechi..domain_released_channel..." />
+            <marker date="1481272366027" expanded="true" signature="1186:1420" placeholder="select rechi..domain_released_channel..." />
+            <marker date="1481272366027" expanded="true" signature="1745:1884" placeholder="select missi..information..." />
+            <marker date="1481272366027" expanded="true" signature="1788:1861" placeholder="select catei..released_channel..." />
+            <marker date="1481272366027" expanded="true" signature="2339:2427" placeholder="SELECT domai..domain..." />
+            <marker date="1481272366027" expanded="true" signature="2477:2625" placeholder="select missi..information..." />
+            <marker date="1481272366027" expanded="true" signature="2520:2593" placeholder="select catei..released_channel..." />
+            <marker date="1481272366027" expanded="true" signature="3128:3237" placeholder="update sourc..." />
+            <marker date="1481272366027" expanded="true" signature="3182:3234" placeholder="SELECT sourc..information..." />
+            <marker date="1481272366027" expanded="true" signature="3449:3537" placeholder="SELECT domai..domain..." />
+            <marker date="1481272366027" expanded="true" signature="3595:3667" placeholder="select * fro..hotwords..." />
+            <marker date="1481272366027" expanded="true" signature="3869:3957" placeholder="SELECT domai..domain..." />
+            <marker date="1481272366027" expanded="true" signature="4033:4125" placeholder="select infoi..information..." />
+            <marker date="1481272366027" expanded="true" signature="4385:4416" placeholder="delete from ..." />
+            <marker date="1481272366027" expanded="true" signature="4541:4579" placeholder="select invnu..member..." />
+            <marker date="1481272366027" expanded="true" signature="4733:4772" placeholder="select invco..member..." />
+            <marker date="1481272366027" expanded="true" signature="4943:5035" placeholder="select comTh..information..." />
+            <marker date="1481272366027" expanded="true" signature="5330:5381" placeholder="select infoi..information..." />
+            <marker date="1481272366027" expanded="true" signature="6035:6169" placeholder="select t2.re..information..." />
+            <marker date="1481272366027" expanded="true" signature="6527:6664" placeholder="update infor..." />
+            <marker date="1481272366027" expanded="true" signature="6875:7010" placeholder="select t2.re..information..." />
+            <marker date="1481272366027" expanded="true" signature="7284:7422" placeholder="update infor..." />
+            <marker date="1481272366027" expanded="true" signature="7631:7677" placeholder="select digg,..comment..." />
+            <marker date="1481272366027" expanded="true" signature="8020:8071" placeholder="update comme..." />
+            <marker date="1481272366027" expanded="true" signature="8297:8431" placeholder="SELECT t2.su..information..." />
+            <marker date="1481272366027" expanded="true" signature="8812:8953" placeholder="update infor..." />
+            <marker date="1481272366027" expanded="true" signature="9186:9326" placeholder="SELECT t2.op..information..." />
+            <marker date="1481272366027" expanded="true" signature="9731:9878" placeholder="update infor..." />
+            <marker date="1481272366027" expanded="true" signature="10491:10543" placeholder="UPDATE comme..." />
+            <marker date="1481272366027" expanded="true" signature="10727:10770" placeholder="select creat..comment..." />
+            <marker date="1481272366027" expanded="true" signature="11062:11212" placeholder="select t2.pl..information..." />
+            <marker date="1481272366027" expanded="true" signature="11701:11858" placeholder="update infor..." />
+            <marker date="1481272366027" expanded="true" signature="12162:12297" placeholder="select t1.in..information..." />
+            <marker date="1481272366027" expanded="true" signature="12466:12501" placeholder="SELECT mid f..member..." />
+            <marker date="1481272366027" expanded="true" signature="12771:12819" placeholder="select domai..domain..." />
+            <marker date="1481272366027" expanded="true" signature="13007:13083" placeholder="select versi..vermgr..." />
+            <marker date="1481272366027" expanded="true" signature="13281:13389" placeholder="update vermg..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/adb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2665" max-vertical-offset="3762">
+          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/elements_id.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2988" max-vertical-offset="3952">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/ui_push.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1235">
+          <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+          <folding>
+            <element signature="e#48#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lib/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2347526" vertical-offset="24" max-vertical-offset="1520">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

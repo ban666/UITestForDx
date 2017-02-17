@@ -1,0 +1,16 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+
+*** Variables ***
+${ec1}            420281000010000
+${ec1_keyword}    自动化大冶有色新闻
+
+*** Test Cases ***
+CompanySearch
+    [Template]    DomainSearchCheck
+    ${ec1}    ${ec1_keyword}    ${ec}    自动化文字新闻
+
+DxSearch
+    ${search_ret}    search    自动化大冶有色
+    Length Should Be    ${search_ret}    0

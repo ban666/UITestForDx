@@ -1,0 +1,31 @@
+*** Settings ***
+Resource          ../Lib.txt
+Resource          ../DX_Test_Info.txt
+Library           ../../public/UserTest.py
+
+*** Test Cases ***
+CoinsTest
+    [Setup]    ClearAccountSettings
+    ${userinfo_third_a}    third_login_test    1
+    ${userinfo_third_b}    third_login_test    2
+    ${userinfo_third_c}    third_login_test    3
+    #A邀请B
+    ${ret}    invite_user    ${userinfo_third_a}    ${userinfo_third_b}
+    ${point_list_a}    get_points_by_dc    ${userinfo_third_a['dc']}
+    ${point_list_b}    get_points_by_dc    ${userinfo_third_b['dc']}
+    ${point_list_c}    get_points_by_dc    ${userinfo_third_c['dc']}
+    log    ${point_list_a['total']}
+    Should Be Equal As Integers    ${point_list_b['total']}    300
+    Should Be Equal As Integers    ${point_list_c['total']}    100
+    Should Be Equal As Integers    ${point_list_a['total']}    300
+    #A被C邀请
+    invite_user    ${userinfo_third_c}    ${userinfo_third_a}
+    ${point_list_a}    get_points_by_dc    ${userinfo_third_a['dc']}
+    ${point_list_b}    get_points_by_dc    ${userinfo_third_b['dc']}
+    ${point_list_c}    get_points_by_dc    ${userinfo_third_c['dc']}
+    Should Be Equal As Integers    ${point_list_b['total']}    300
+    Should Be Equal As Integers    ${point_list_c['total']}    300
+    Should Be Equal As Integers    ${point_list_a['total']}    500
+    ${userinfo_third_a}    third_login_test    1    True
+    ${userinfo_third_b}    third_login_test    2    True
+    ${userinfo_third_c}    third_login_test    3    True
